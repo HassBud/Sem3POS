@@ -10,7 +10,7 @@ public class Sale {
     private Receipt receipt;
     private ArrayList<Item> listItem;
     private SaleLog saleLog;
-    private double runningTotal;
+    private double runningTotalIncVat;
 
 
     /* Creates new instance and saves time of sale */
@@ -19,6 +19,7 @@ public class Sale {
         receipt = new Receipt(); //double, Item [] DTO, double, double
         //should have a list
         listItem = new ArrayList<Item>();
+        runningTotalIncVat = 0;
 
     }
     /*
@@ -46,16 +47,13 @@ public class Sale {
                 listItem.add(newItem);
             }
         }
-        receipt.addItemToReceipt(listItem);
 
-        return // test
+        runningTotalIncVat += scanItem.getPriceOfItemIncVat();
+        LatestRegisteredItemDTO saleInfo = new LatestRegisteredItemDTO(scanItem,this.runningTotalIncVat);
+
+        return saleInfo;
     }
-    public double calculatePriceIncVat(ItemDTO item){
-        double itemPrice = item.getPriceOfItem();
-        double itemVat = itemPrice * item.getVat();
-        double priceWithVat = itemPrice + itemVat;
-        return priceWithVat;
-    }
+
     public double createAndCollect(Receipt paymentByCostumer) {
         return saleLog.finalPayment(paymentByCostumer); // är SaleDTO överflödig? Fundering om man kan hämta running total istället.
     }

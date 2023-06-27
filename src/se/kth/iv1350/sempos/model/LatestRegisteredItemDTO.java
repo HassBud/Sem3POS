@@ -1,6 +1,7 @@
 package se.kth.iv1350.sempos.model;
 
 public class LatestRegisteredItemDTO {
+
     private String itemDescription;
     private double itemPrice;
     private double runningTotalIncVat;
@@ -11,5 +12,17 @@ public class LatestRegisteredItemDTO {
         this.itemPrice = itemInformation.getPriceOfItemIncVat();
         this.runningTotalIncVat = runningTotalIncVat;
 
+    }
+
+    public String getItemDescription() {
+        return itemDescription;
+    }
+
+    public double getItemPrice() {
+        return itemPrice;
+    }
+
+    public double getRunningTotalIncVat() {
+        return runningTotalIncVat;
     }
 }

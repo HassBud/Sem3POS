@@ -24,9 +24,10 @@ public class ItemDTO {
         this.identifierOfItem = identifierOfItem;
         this.nameOfItem = nameOfItem;
         this.priceOfItem = priceOfItem;
-        this.vatPriceForItem = priceOfItem * vat;
         this.vat = vat;
-        this.priceOfItemIncVat = priceOfItemIncVat;
+
+        this.vatPriceForItem = priceOfItem * vat;
+        this.priceOfItemIncVat = priceOfItem + this.vatPriceForItem;
     }
 
 
