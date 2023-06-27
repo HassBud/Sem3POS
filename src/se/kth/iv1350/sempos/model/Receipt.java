@@ -38,9 +38,7 @@ public class Receipt {
 
 
     /* Getters for all the attributes */
-    public double getRunningTotal() {
-        return this.runningTotal;
-    }
+
 
     public ArrayList<Item> getRecordsOfItems() {
         return recordsOfItems;

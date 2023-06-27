@@ -46,8 +46,15 @@ public class Sale {
                 listItem.add(newItem);
             }
         }
-        receipt.addItemsToReceipt(listItem);
+        receipt.addItemToReceipt(listItem);
+
         return // test
+    }
+    public double calculatePriceIncVat(ItemDTO item){
+        double itemPrice = item.getPriceOfItem();
+        double itemVat = itemPrice * item.getVat();
+        double priceWithVat = itemPrice + itemVat;
+        return priceWithVat;
     }
     public double createAndCollect(Receipt paymentByCostumer) {
         return saleLog.finalPayment(paymentByCostumer); // är SaleDTO överflödig? Fundering om man kan hämta running total istället.

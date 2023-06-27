@@ -30,9 +30,7 @@ public class ItemDTO {
     }
 
 
-    public double totalItemPrice() {
-    return 0;
-    }
+
 
 
     //should have a getIdentifierOfItem/setidentifierOfItem
@@ -58,5 +56,8 @@ public class ItemDTO {
     }
     public double getPriceOfItemIncVat() {
         return this.priceOfItemIncVat;
+    }
+    public double getVat() {
+        return vat;
     }
 }
