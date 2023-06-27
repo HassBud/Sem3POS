@@ -28,9 +28,8 @@ public class Receipt {
         //this.changeBack = changeBack;
     }
     /* Update receipt */
-    public void addItemToReceipt (Item addedItem) { // ska det vara Sale eller Item i som Parameter i argumenten?
-       recordsOfItems.add(addedItem);
-       runningTotal += addedItem.getItemDTO().getPriceOfItemIncVat();
+    public void addItemToReceipt (ArrayList<Item> addedItem) { // ska det vara Sale eller Item i som Parameter i argumenten?
+       recordsOfItems.addAll(addedItem); // uppdaterad
     }
 
     public void addChangeBackToReceipt(){
