@@ -26,16 +26,17 @@ public class View {
 
         scanItem(1);
         scanItem(2);
+        scanItem(1);
 
 
     }
     private void scanItem(int itemIdentifier){
-        LatestRegisteredItemDTO saleInfo = contr.registerItem(1);
+        LatestRegisteredItemDTO saleInfo = contr.registerItem(itemIdentifier);
         System.out.println("A new item has been registered: ");
         System.out.println("Item: " + saleInfo.getItemDescription());
         System.out.println("Price: " + saleInfo.getItemPrice());
+        System.out.println("Total Price: " + String.format("%.2f",saleInfo.getRunningTotalIncVat()));
         System.out.println();
-        System.out.println("Total Price: " + saleInfo.getRunningTotalIncVat());
 
     }
 
