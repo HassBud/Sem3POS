@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /* Represents the created receipt for the sale. Proves the payment for the sale */
 public class Receipt {
 
-    private double runningTotal;
+
 
 
     private ArrayList <Item> recordsOfItems;
@@ -18,18 +18,18 @@ public class Receipt {
     /* Receipt constructor */
     public Receipt() {
         recordsOfItems = new ArrayList<Item>();
-        runningTotal = 0;
+
         amountPayed = 0;
         //changeBack = amountPayed - runningTotal;
     }
-    public Receipt(double runningTotal, double amountPayed, double changeBack){
-        this.runningTotal = runningTotal;
+    public Receipt( double amountPayed, double changeBack){
         this.amountPayed = amountPayed;
         //this.changeBack = changeBack;
     }
     /* Update receipt */
-    public void addItemsToReceipt (ArrayList<Item> addedItem) { // ska det vara Sale eller Item i som Parameter i argumenten?
-       recordsOfItems.addAll(addedItem); // uppdaterad
+    public void addItemToReceipt (ArrayList<Item> addedItem) { // ska det vara Sale eller Item i som Parameter i argumenten?
+       recordsOfItems.addAll(addedItem);
+       runningTotal += addedItem.getItemDTO().getPriceOfItemIncVat();
     }
 
     public void addChangeBackToReceipt(){

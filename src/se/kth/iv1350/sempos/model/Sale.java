@@ -10,6 +10,7 @@ public class Sale {
     private Receipt receipt;
     private ArrayList<Item> listItem;
     private SaleLog saleLog;
+    private double runningTotal;
 
 
     /* Creates new instance and saves time of sale */
