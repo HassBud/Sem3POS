@@ -43,10 +43,9 @@ public class Sale {
             {
                 Item newItem = new Item(scanItem);
                 listItem.add(newItem);
-                receipt.addItemToReceipt(newItem);
-
             }
         }
+        receipt.addItemsToReceipt(listItem);
         return // test
     }
     public double createAndCollect(Receipt paymentByCostumer) {
