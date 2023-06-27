@@ -33,18 +33,17 @@ public class Controller {
     }
 
     /* Payment by costumer */
-    public double pay(Receipt paymentByCostumer) { // varför är pay aldrig använd?
+ /*   public double pay(Receipt paymentByCostumer) { // varför är pay aldrig använd?
 
         return sale.createAndCollect(paymentByCostumer);
 
-    }
+    }*/
 
-    public void accountingInfo(){
+   /* public void accountingInfo(){
         accountingSystem.deliverInformationToAccounting();
     }
     public void inventoryInfo(){
-        inventory.updateInventory();
-    }
+        inven*/
 
 
     /* Skriv här */

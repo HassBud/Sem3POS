@@ -18,10 +18,10 @@ public class AccountingSystem {
     }
 
     /* Skriv här vad skall vara i DeliverInfo metoden? */
-    public void deliverInformationToAccounting(){
+  /*  public void deliverInformationToAccounting(){
       ArrayList<Item> items = receipt.getRecordsOfItems();
       double runningTotal = receipt.getRunningTotal();
 
 
-    }
+    }*/
 }

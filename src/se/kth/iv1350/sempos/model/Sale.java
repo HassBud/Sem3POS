@@ -54,9 +54,9 @@ public class Sale {
         return saleInfo;
     }
 
-    public double createAndCollect(Receipt paymentByCostumer) {
+   /* public double createAndCollect(Receipt paymentByCostumer) {
         return saleLog.finalPayment(paymentByCostumer); // är SaleDTO överflödig? Fundering om man kan hämta running total istället.
-    }
+    }*/
 
     public SaleLog getSaleInformation(Receipt receipt) {
         SaleLog getSaleInfo = new SaleLog(receipt);

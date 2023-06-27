@@ -7,10 +7,10 @@ public class LatestRegisteredItemDTO {
     private double runningTotalIncVat;
 
 
-    public LatestRegisteredItemDTO(ItemDTO itemInformation, double currentRunningTotal){
+    public LatestRegisteredItemDTO(ItemDTO itemInformation, double currentTotalPrice){
         this.itemDescription = itemInformation.getNameOfItem();
         this.itemPrice = itemInformation.getPriceOfItemIncVat();
-        this.runningTotalIncVat = currentRunningTotal;
+        this.runningTotalIncVat = currentTotalPrice;
 
     }
 

@@ -29,13 +29,10 @@ public class Receipt {
     /* Update receipt */
     public void addItemToReceipt (ArrayList<Item> addedItem) { // ska det vara Sale eller Item i som Parameter i argumenten?
        recordsOfItems.addAll(addedItem);
-       runningTotal += addedItem.getItemDTO().getPriceOfItemIncVat();
+
     }
 
-    public void addChangeBackToReceipt(){
-       changeBack  = amountPayed - runningTotal;
-    }
-
+   
 
     /* Getters for all the attributes */
 

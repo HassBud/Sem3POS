@@ -14,9 +14,9 @@ public class SaleLog {
 
 
     /* Presents final payment for customer.  */
-    public double finalPayment(Receipt runningTotal) {
+   /* public double finalPayment(Receipt runningTotal) {
         return runningTotal.getRunningTotal();
-    } //?? ANvänds när?
+    } //?? ANvänds när?*/
 
 
     /* Getters */
