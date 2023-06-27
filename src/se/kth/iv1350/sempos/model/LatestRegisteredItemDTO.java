@@ -23,6 +23,6 @@ public class LatestRegisteredItemDTO {
     }
 
     public double getRunningTotalIncVat() {
-        return runningTotalIncVat;
+        return runningTotal;
     }
 }
