@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Sem3POS">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/startup/Sem3POS.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
