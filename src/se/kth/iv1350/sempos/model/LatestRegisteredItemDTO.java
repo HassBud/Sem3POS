@@ -4,13 +4,13 @@ public class LatestRegisteredItemDTO {
 
     private String itemDescription;
     private double itemPrice;
-    private double runningTotal;
+    private double runningTotalIncVat;
 
 
-    public LatestRegisteredItemDTO(ItemDTO itemInformation, double runningTotal){
+    public LatestRegisteredItemDTO(ItemDTO itemInformation, double currentRunningTotal){
         this.itemDescription = itemInformation.getNameOfItem();
         this.itemPrice = itemInformation.getPriceOfItemIncVat();
-        this.runningTotal = runningTotal;
+        this.runningTotalIncVat = currentRunningTotal;
 
     }
 
@@ -23,6 +23,6 @@ public class LatestRegisteredItemDTO {
     }
 
     public double getRunningTotalIncVat() {
-        return runningTotal;
+        return runningTotalIncVat;
     }
 }
