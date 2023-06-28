@@ -11,6 +11,7 @@ public class Controller {
     private Sale sale;
     private InventorySystem inventory;
     private AccountingSystem accountingSystem;
+    private LatestRegisteredItemDTO latestRegisteredItemDTO;
 
     /* Starts a new sale. This method must be called first.*/
     public void startSale() {
@@ -31,9 +32,13 @@ public class Controller {
 
         return registeredSaleInfo;
     }
-    public Sale pay(double expectedAmountToBePayed){
-        Sale paymentInfo = sale.addPayment(expectedAmountToBePayed);
-    } return paymentInfo;
+    public Sale pay(double paymentByCostumer){
+        Sale paymentInfo = sale.addPayment(paymentByCostumer);
+
+
+      return paymentInfo;
+     }
+
 
 
 

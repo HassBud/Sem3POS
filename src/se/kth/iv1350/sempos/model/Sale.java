@@ -1,7 +1,6 @@
 package se.kth.iv1350.sempos.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 
 /* One sale made in system */
@@ -11,7 +10,9 @@ public class Sale {
     private ArrayList<Item> listItem;
     private SaleLog saleLog;
     private double runningTotalIncVat;
-    private double payment;
+    private Payment payment;
+
+
 
 
     /* Creates new instance and saves time of sale */
@@ -21,8 +22,6 @@ public class Sale {
         //should have a list
         listItem = new ArrayList<Item>();
         runningTotalIncVat = 0;
-        payment = ;
-
     }
     /*
     public void updatedReceipt(ArrayList<Item> items){
@@ -56,22 +55,15 @@ public class Sale {
         return saleInfo;
     }
 
-    public double addPayment(LatestRegisteredItemDTO finalAmount){
-        double addedPayment = finalAmount.getRunningTotalIncVat();
+    public Sale addPayment(double paymentByCostumer, SaleLog){
+
+        if (runningTotalIncVat == paymentByCostumer)
+            logsale()
         return addedPayment;
     }
 
-//Test - Micke
+    public Sale logSale(double totalPrice, )
 
-   /* public double createAndCollect(Receipt paymentByCostumer) {
-        return saleLog.finalPayment(paymentByCostumer); // är SaleDTO överflödig? Fundering om man kan hämta running total istället.
-    }*/
-
-    /*public SaleLog getSaleInformation(Receipt receipt) {
-        SaleLog getSaleInfo = new SaleLog(receipt);
-
-        return getSaleInfo;
-    } */
 
     public ArrayList<Item> getListItem() {
         return listItem;

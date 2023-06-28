@@ -1,13 +1,18 @@
 package se.kth.iv1350.sempos.model;
 
+import java.util.ArrayList;
+
 /* Stores information about the sale */
 public class SaleLog {
-    private Receipt receipt;
+
+    private double runningTotal;
+    private ArrayList<Item> itemList;
 
     /* Gets sale information from the receipt */
-    public SaleLog(Receipt receipt) {
-    this.receipt = receipt;
+    public SaleLog(double ) {
+    this.runningTotal = runningTotal;
     }
+
 
 
 
