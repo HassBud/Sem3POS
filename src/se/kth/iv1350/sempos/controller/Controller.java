@@ -32,9 +32,8 @@ public class Controller {
 
         return registeredSaleInfo;
     }
-    public Sale pay(double paymentByCostumer){
-        Sale paymentInfo = sale.addPayment(paymentByCostumer);
-
+    public PaymentDTO pay(double paymentByCostumer){
+        PaymentDTO paymentInfo = sale.addpayment(paymentByCostumer);
 
       return paymentInfo;
      }

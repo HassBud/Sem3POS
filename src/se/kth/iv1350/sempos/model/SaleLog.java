@@ -8,13 +8,6 @@ public class SaleLog {
     private double runningTotal;
     private ArrayList<Item> itemList;
 
-    /* Gets sale information from the receipt */
-    public SaleLog(double ) {
-    this.runningTotal = runningTotal;
-    }
-
-
-
 
 
 

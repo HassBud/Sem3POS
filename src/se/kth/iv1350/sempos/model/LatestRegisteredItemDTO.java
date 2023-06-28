@@ -5,12 +5,15 @@ public class LatestRegisteredItemDTO {
     private String itemDescription;
     private double itemPrice;
     private double runningTotalIncVat;
+    private double totalVat;
 
 
-    public LatestRegisteredItemDTO(ItemDTO itemInformation, double currentTotalPrice){
+    public LatestRegisteredItemDTO(ItemDTO itemInformation, double currentTotalPrice, double totalVat){
         this.itemDescription = itemInformation.getNameOfItem();
         this.itemPrice = itemInformation.getPriceOfItemIncVat();
         this.runningTotalIncVat = currentTotalPrice;
+        this.totalVat = totalVat;
+
 
     }
 
@@ -24,5 +27,9 @@ public class LatestRegisteredItemDTO {
 
     public double getRunningTotalIncVat() {
         return runningTotalIncVat;
+    }
+
+    public double getTotalVat() {
+        return totalVat;
     }
 }

@@ -10,7 +10,10 @@ public class Sale {
     private ArrayList<Item> listItem;
     private SaleLog saleLog;
     private double runningTotalIncVat;
-    private Payment payment;
+    private PaymentDTO paymentDTO;
+    private double totalVat;
+    private CashRegister cashRegister;
+
 
 
 
@@ -21,7 +24,11 @@ public class Sale {
         receipt = new Receipt(); //double, Item [] DTO, double, double
         //should have a list
         listItem = new ArrayList<Item>();
+        cashRegister = new CashRegister();
         runningTotalIncVat = 0;
+        totalVat = 0;
+
+
     }
     /*
     public void updatedReceipt(ArrayList<Item> items){
@@ -50,19 +57,19 @@ public class Sale {
         }
 
         runningTotalIncVat += scanItem.getPriceOfItemIncVat();
-        LatestRegisteredItemDTO saleInfo = new LatestRegisteredItemDTO(scanItem,this.runningTotalIncVat);
+        totalVat += scanItem.getVatPriceForItem();
+        LatestRegisteredItemDTO saleInfo = new LatestRegisteredItemDTO(scanItem,this.runningTotalIncVat, this.totalVat);
 
         return saleInfo;
     }
 
-    public Sale addPayment(double paymentByCostumer, SaleLog){
+    public PaymentDTO addpayment(double paymentByCostumer){
 
-        if (runningTotalIncVat == paymentByCostumer)
-            logsale()
-        return addedPayment;
+        this.cashRegister = new CashRegister();
+        cashRegister.pay(this.runningTotalIncVat, paymentByCostumer);
+        return cashRegister.getPaymentInfo();
     }
 
-    public Sale logSale(double totalPrice, )
 
 
     public ArrayList<Item> getListItem() {

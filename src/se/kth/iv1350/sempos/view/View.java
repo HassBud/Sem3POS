@@ -1,8 +1,6 @@
 package se.kth.iv1350.sempos.view;
 import se.kth.iv1350.sempos.controller.Controller;
-import se.kth.iv1350.sempos.model.ItemDTO;
-import se.kth.iv1350.sempos.model.LatestRegisteredItemDTO;
-import se.kth.iv1350.sempos.model.Receipt;
+import se.kth.iv1350.sempos.model.*;
 
 /*
  * Placeholder for real view. Contains hardcoded execution with calls to all system operations in the
@@ -28,8 +26,12 @@ public class View {
         scanItem(2);
         scanItem(1);
 
+        payment(200);
+
+
 
     }
+
     private void scanItem(int itemIdentifier){
         LatestRegisteredItemDTO saleInfo = contr.registerItem(itemIdentifier);
         System.out.println("A new item has been registered: ");
@@ -37,7 +39,14 @@ public class View {
         System.out.println("Price: " + saleInfo.getItemPrice());
         System.out.println("Total Price: " + String.format("%.2f",saleInfo.getRunningTotalIncVat()));
         System.out.println();
+    }
 
+    private void payment(double paymentByCostumer){
+        System.out.println("Payment has been registered: ");
+        PaymentDTO changeInfo = contr.pay(paymentByCostumer);
+        System.out.println("Change back: " + changeInfo.getChange());
+        System.out.println("Total amount: " + String.format("%.2f",changeInfo.getTotalPrice()));
+        System.out.println();
     }
 
 
