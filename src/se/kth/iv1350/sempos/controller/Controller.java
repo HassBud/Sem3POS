@@ -31,19 +31,12 @@ public class Controller {
 
         return registeredSaleInfo;
     }
+    public Sale pay(double expectedAmountToBePayed){
+        Sale paymentInfo = sale.addPayment(expectedAmountToBePayed);
+    } return paymentInfo;
 
-    /* Payment by costumer */
- /*   public double pay(Receipt paymentByCostumer) { // varför är pay aldrig använd?
 
-        return sale.createAndCollect(paymentByCostumer);
 
-    }*/
-
-   /* public void accountingInfo(){
-        accountingSystem.deliverInformationToAccounting();
-    }
-    public void inventoryInfo(){
-        inven*/
 
 
     /* Skriv här */

@@ -11,6 +11,7 @@ public class Sale {
     private ArrayList<Item> listItem;
     private SaleLog saleLog;
     private double runningTotalIncVat;
+    private double payment;
 
 
     /* Creates new instance and saves time of sale */
@@ -20,6 +21,7 @@ public class Sale {
         //should have a list
         listItem = new ArrayList<Item>();
         runningTotalIncVat = 0;
+        payment = ;
 
     }
     /*
@@ -54,32 +56,30 @@ public class Sale {
         return saleInfo;
     }
 
+    public double addPayment(LatestRegisteredItemDTO finalAmount){
+        double addedPayment = finalAmount.getRunningTotalIncVat();
+        return addedPayment;
+    }
+
+
+
    /* public double createAndCollect(Receipt paymentByCostumer) {
         return saleLog.finalPayment(paymentByCostumer); // är SaleDTO överflödig? Fundering om man kan hämta running total istället.
     }*/
 
-    public SaleLog getSaleInformation(Receipt receipt) {
+    /*public SaleLog getSaleInformation(Receipt receipt) {
         SaleLog getSaleInfo = new SaleLog(receipt);
 
         return getSaleInfo;
-    }
+    } */
 
     public ArrayList<Item> getListItem() {
         return listItem;
     }
-    /* Skriv här */
-    /*
-    public void recordItem(Item identifierOfItem) {
-        listItem.add(identifierOfItem);
-    } */
 
-    public double getAmountThatCostumerPays(){ // Skall denna metod vara i Sale eller Receipt?
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the amount given by costumer: ");
-        double amount = scanner.nextDouble();
-        return amount;
+    public double getRunningTotalIncVat() {
+        return runningTotalIncVat;
     }
-
 
     }
 
