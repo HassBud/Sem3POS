@@ -21,10 +21,9 @@ public class Sale {
     /* Creates new instance and saves time of sale */
     public Sale() {
         setDateAndTimeOfSale();
-        receipt = new Receipt(); //double, Item [] DTO, double, double
+
         //should have a list
         listItem = new ArrayList<Item>();
-        cashRegister = new CashRegister();
         runningTotalIncVat = 0;
         totalVat = 0;
 
@@ -53,7 +52,9 @@ public class Sale {
             {
                 Item newItem = new Item(scanItem);
                 listItem.add(newItem);
+
             }
+            receipt.addItemToReceipt(listItem);
         }
 
         runningTotalIncVat += scanItem.getPriceOfItemIncVat();
@@ -69,6 +70,16 @@ public class Sale {
         cashRegister.pay(this.runningTotalIncVat, paymentByCostumer);
         return cashRegister.getPaymentInfo();
     }
+    public Receipt addReceipt(){
+        PaymentDTO saleInfo = cashRegister.getPaymentInfo();
+
+        this.receipt = new Receipt(saleInfo,listItem);
+
+
+
+        return this.receipt;
+    }
+
 
 
 

@@ -2,6 +2,9 @@ package se.kth.iv1350.sempos.view;
 import se.kth.iv1350.sempos.controller.Controller;
 import se.kth.iv1350.sempos.model.*;
 
+import java.util.Arrays;
+
+
 /*
  * Placeholder for real view. Contains hardcoded execution with calls to all system operations in the
  * int the controller
@@ -27,6 +30,8 @@ public class View {
         scanItem(1);
 
         payment(200);
+        printReceipts();
+
 
 
 
@@ -45,9 +50,15 @@ public class View {
         System.out.println("Payment has been registered: ");
         PaymentDTO changeInfo = contr.pay(paymentByCostumer);
         System.out.println("Change back: " + changeInfo.getChange());
-        System.out.println("Total amount: " + String.format("%.2f",changeInfo.getTotalPrice()));
+        System.out.println("Total amount: " + String.format("%.2f",changeInfo.getTotalPaymentByCostumer()));
         System.out.println();
     }
+    private void printReceipts(){
+
+        Receipt receiptInfo = contr.printReceipt();
+        System.out.println("Receipt is printed: " + receiptInfo);
+    }
+
 
 
 
