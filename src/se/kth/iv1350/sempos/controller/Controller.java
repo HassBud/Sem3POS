@@ -39,7 +39,7 @@ public class Controller {
 
       return paymentInfo;
      }
-     public Receipt printReceipt(){
+     public Receipt getReceipt(){
        return sale.addReceipt();
      }
 

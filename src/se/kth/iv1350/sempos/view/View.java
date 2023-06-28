@@ -31,7 +31,7 @@ public class View {
         scanItem(1);
 
         payment(200);
-        printReceipts();
+        receipt();
 
 
 
@@ -54,9 +54,9 @@ public class View {
         System.out.println("Total amount: " + String.format("%.2f",changeInfo.getTotalPaymentByCostumer()));
         System.out.println();
     }
-    private void printReceipts(){
+    private void receipt(){
 
-        Receipt receiptInfo = contr.printReceipt();
+        Receipt receiptInfo = contr.getReceipt();
         System.out.println("Receipt is printed: ");
         System.out.println();
         ArrayList<Item> list = receiptInfo.getRecordsOfItems();
@@ -64,10 +64,11 @@ public class View {
             Item extractedItem = list.get(i);
             String itemName = extractedItem.getItemDTO().getNameOfItem();
             double itemPrice = extractedItem.getItemDTO().getPriceOfItemIncVat();
-            System.out.println(itemName + ": " + itemPrice + "kr ");
+            double vatPrice = extractedItem.getItemDTO().getVatPriceForItem();
+            System.out.println(itemName + ": " + itemPrice + " kr, " + "Vat: " + vatPrice);
         }
 
-        System.out.println("Price for each item: " + receiptInfo.getPriceOfItem());
+
 
 
 
