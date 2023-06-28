@@ -41,28 +41,29 @@ public class Sale {
 
 
     /* Adds an Item to the list */
-    public LatestRegisteredItemDTO addItem(ItemDTO scanItem) { //go through array, find multiples of an item and add them together.
-        for (Item oneItem : listItem) {
+    public LatestRegisteredItemDTO addItem(ItemDTO scanItem) {
+        boolean itemFound = false;
 
-            if (oneItem.getItemDTO().getIdentifierOfItem() == scanItem.getIdentifierOfItem()) {
+        for (Item oneItem : listItem) {
+            if (oneItem.getItemDTO().getIdentifierOfItem()==(scanItem.getIdentifierOfItem())) {
                 oneItem.incrementNumberOfItems();
+                itemFound = true;
                 break;
             }
-            else
-            {
-                Item newItem = new Item(scanItem);
-                listItem.add(newItem);
+        }
 
-            }
-            receipt.addItemToReceipt(listItem);
+        if (!itemFound) {
+            Item newItem = new Item(scanItem);
+            listItem.add(newItem);
         }
 
         runningTotalIncVat += scanItem.getPriceOfItemIncVat();
         totalVat += scanItem.getVatPriceForItem();
-        LatestRegisteredItemDTO saleInfo = new LatestRegisteredItemDTO(scanItem,this.runningTotalIncVat, this.totalVat);
+        LatestRegisteredItemDTO saleInfo = new LatestRegisteredItemDTO(scanItem, runningTotalIncVat, totalVat);
 
         return saleInfo;
     }
+
 
     public PaymentDTO addpayment(double paymentByCostumer){
 

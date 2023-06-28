@@ -2,6 +2,7 @@ package se.kth.iv1350.sempos.view;
 import se.kth.iv1350.sempos.controller.Controller;
 import se.kth.iv1350.sempos.model.*;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 
@@ -56,7 +57,20 @@ public class View {
     private void printReceipts(){
 
         Receipt receiptInfo = contr.printReceipt();
-        System.out.println("Receipt is printed: " + receiptInfo);
+        System.out.println("Receipt is printed: ");
+        System.out.println();
+        ArrayList<Item> list = receiptInfo.getRecordsOfItems();
+        for (int i = 0; i < list.size(); i++) {
+            Item extractedItem = list.get(i);
+            String itemName = extractedItem.getItemDTO().getNameOfItem();
+            double itemPrice = extractedItem.getItemDTO().getPriceOfItemIncVat();
+            System.out.println(itemName + ": " + itemPrice + "kr ");
+        }
+
+        System.out.println("Price for each item: " + receiptInfo.getPriceOfItem());
+
+
+
     }
 
 
