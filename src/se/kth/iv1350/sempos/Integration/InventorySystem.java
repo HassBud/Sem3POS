@@ -17,11 +17,11 @@ public class InventorySystem {
     /* Hard coded information about each item available in the store */
     public ItemDTO getItemInformation(int identifierOfItem) {
         if (identifierOfItem == 1)
-            return new ItemDTO(1, "Äpple", 5, 0.06, 1);
+            return new ItemDTO(1, "Äpple", 5, 0.06);
         else if (identifierOfItem == 2)
-            return new ItemDTO(2, "Bok", 25,0.25, 1);
+            return new ItemDTO(2, "Bok", 25,0.25);
         else if (identifierOfItem == 3)
-            return new ItemDTO(3, "Mjölk", 10,0.12, 1);
+            return new ItemDTO(3, "Mjölk", 10,0.12);
         else
             return null;
     }

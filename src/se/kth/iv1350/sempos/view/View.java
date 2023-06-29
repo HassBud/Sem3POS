@@ -25,10 +25,10 @@ public class View {
         contr.startSale();
         System.out.println("A new sale has been started.");
 
-        scanItem(1);
-        scanItem(2);
-        scanItem(1);
-        scanItem(3);
+        scanItem(1, 3);
+        scanItem(2,1);
+        scanItem(3,2);
+
 
 
 
@@ -40,13 +40,13 @@ public class View {
 
     }
 
-    private void scanItem(int itemIdentifier){
-        LatestRegisteredItemDTO saleInfo = contr.registerItem(itemIdentifier);
+    private void scanItem(int itemIdentifier, int quantity){
+        LatestRegisteredItemDTO saleInfo = contr.registerItem(itemIdentifier, quantity);
         System.out.println("A new item has been registered: ");
         System.out.println("Item: " + saleInfo.getItemDescription());
-        System.out.println("Price: " + saleInfo.getItemPrice());
+        System.out.println("Price inc. vat: " + saleInfo.getItemPriceIncVat());
         System.out.println("Total Price: " + String.format("%.2f",saleInfo.getRunningTotalIncVat()));
-        System.out.println("Price: " + saleInfo.getNumberOfItems());
+        System.out.println("Quantity: " + saleInfo.getNumberOfItems());
         System.out.println();
     }
 

@@ -16,29 +16,26 @@ public class Receipt {
     private double priceOfItem;
     private double totalAmountOfSaleIncVAT;
     private double totalVat;
-    private int quantityOfItem;
     private LocalDateTime localDateTime;
 
     /* Receipt constructor */
-    public Receipt() {
-        recordsOfItems = new ArrayList<Item>();
-        //changeBack = amountPayed - runningTotal;
-    }
-    public Receipt( PaymentDTO paymentInfo, ArrayList<Item> rec, double totalVat, int quantityOfItem){
+
+    public Receipt( PaymentDTO paymentInfo, ArrayList<Item> rec, double totalVat){
         this.amountPayed = paymentInfo.getTotalPaymentByCostumer();
         this.changeBack = paymentInfo.getChange();
-        this.recordsOfItems = rec;
+        this.recordsOfItems = new ArrayList<>(rec);
         this.totalAmountOfSaleIncVAT = paymentInfo.getRunningTotal();
         this.totalVat = totalVat;
-        this.quantityOfItem = quantityOfItem ;
         this.localDateTime = java.time.LocalDateTime.now();
 
     }
 
 
     /* Update receipt */
-    public void addItemToReceipt (ArrayList<Item> addedItem) { // ska det vara Sale eller Item i som Parameter i argumenten?
-       recordsOfItems.addAll(addedItem);
+    public void addItemToReceipt (ArrayList<Item> addedItems) { // ska det vara Sale eller Item i som Parameter i argumenten?
+        for (Item item : addedItems) {
+            recordsOfItems.add(item);
+        }
     }
 
 
@@ -68,7 +65,7 @@ public class Receipt {
         return totalAmountOfSaleIncVAT;
     }
     public double getTotalVat() {
-        return totalVat;
+      return totalVat;
     }
     public LocalDateTime getLocalDateTime() {
         return localDateTime;

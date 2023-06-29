@@ -13,7 +13,7 @@ public class Sale {
     private CashRegister cashRegister;
     private double runningTotalIncVat;
     private double totalVat;
-    private int quantity;
+    private int numberOfItems;
 
 
 
@@ -27,7 +27,8 @@ public class Sale {
         listItem = new ArrayList<Item>();
         runningTotalIncVat = 0;
         totalVat = 0;
-        quantity = 0;
+
+
 
 
 
@@ -44,13 +45,12 @@ public class Sale {
 
 
     /* Adds an Item to the list */
-    public LatestRegisteredItemDTO addItem(ItemDTO scanItem) {
+    public LatestRegisteredItemDTO addItem(ItemDTO scanItem, int quantity) {
         boolean itemFound = false;
-        int numberOfItems = quantity;
 
         for (Item oneItem : listItem) {
             if (oneItem.getItemDTO().getIdentifierOfItem()==(scanItem.getIdentifierOfItem())) {
-                oneItem.incrementNumberOfItems();
+                oneItem.incrementNumberOfItems(quantity);
                 itemFound = true;
                 break;
             }
@@ -58,14 +58,16 @@ public class Sale {
 
         if (!itemFound) {
             Item newItem = new Item(scanItem);
+            newItem.incrementNumberOfItems(quantity);
             listItem.add(newItem);
         }
 
-        runningTotalIncVat += scanItem.getPriceOfItemIncVat();
-        totalVat += scanItem.getVatPriceForItem();
+        runningTotalIncVat += scanItem.getPriceOfItemIncVat() * quantity;
+        totalVat += scanItem.getVatPriceForItem() * quantity;
+        numberOfItems = quantity;
 
 
-        LatestRegisteredItemDTO saleInfo = new LatestRegisteredItemDTO(scanItem, runningTotalIncVat, totalVat);
+        LatestRegisteredItemDTO saleInfo = new LatestRegisteredItemDTO(scanItem, runningTotalIncVat, totalVat, numberOfItems);
 
         return saleInfo;
     }
@@ -80,7 +82,7 @@ public class Sale {
     public Receipt addReceipt(){
         PaymentDTO saleInfo = cashRegister.getPaymentInfo();
 
-        this.receipt = new Receipt(saleInfo,listItem,totalVat,quantity);
+        this.receipt = new Receipt(saleInfo,listItem,totalVat);
 
         return this.receipt;
     }

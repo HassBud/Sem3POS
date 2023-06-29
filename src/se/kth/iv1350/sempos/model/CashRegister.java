@@ -8,7 +8,7 @@ public class CashRegister {
 
     public PaymentDTO pay(double paymentByCostumer, double totalPayment){
         double change =  totalPayment - paymentByCostumer;
-        paymentInfo = new PaymentDTO(paymentByCostumer,totalPayment,change);
+        paymentInfo = new PaymentDTO(totalPayment,paymentByCostumer,change);
         return paymentInfo;
     }
 

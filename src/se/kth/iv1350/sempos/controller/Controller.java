@@ -28,9 +28,9 @@ public class Controller {
     }
 
     /* Skriv här */
-    public LatestRegisteredItemDTO registerItem(int identifierOfItem) {
+    public LatestRegisteredItemDTO registerItem(int identifierOfItem, int quantity) {
         ItemDTO itemInfo = inventory.getItemInformation(identifierOfItem);
-        LatestRegisteredItemDTO registeredSaleInfo = sale.addItem(itemInfo);
+        LatestRegisteredItemDTO registeredSaleInfo = sale.addItem(itemInfo, quantity);
 
         return registeredSaleInfo;
     }
