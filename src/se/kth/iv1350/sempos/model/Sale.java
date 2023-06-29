@@ -13,7 +13,7 @@ public class Sale {
     private CashRegister cashRegister;
     private double runningTotalIncVat;
     private double totalVat;
-    private int numberOfItems;
+
 
 
 
@@ -27,11 +27,6 @@ public class Sale {
         listItem = new ArrayList<Item>();
         runningTotalIncVat = 0;
         totalVat = 0;
-
-
-
-
-
     }
     /*
     public void updatedReceipt(ArrayList<Item> items){
@@ -64,10 +59,10 @@ public class Sale {
 
         runningTotalIncVat += scanItem.getPriceOfItemIncVat() * quantity;
         totalVat += scanItem.getVatPriceForItem() * quantity;
-        numberOfItems = quantity;
 
 
-        LatestRegisteredItemDTO saleInfo = new LatestRegisteredItemDTO(scanItem, runningTotalIncVat, totalVat, numberOfItems);
+
+        LatestRegisteredItemDTO saleInfo = new LatestRegisteredItemDTO(scanItem, runningTotalIncVat, totalVat, quantity);
 
         return saleInfo;
     }
