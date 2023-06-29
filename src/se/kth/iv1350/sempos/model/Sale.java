@@ -9,10 +9,13 @@ public class Sale {
     private Receipt receipt;
     private ArrayList<Item> listItem;
     private SaleLog saleLog;
-    private double runningTotalIncVat;
     private PaymentDTO paymentDTO;
-    private double totalVat;
     private CashRegister cashRegister;
+    private double runningTotalIncVat;
+    private double totalVat;
+    private int quantity;
+
+
 
 
 
@@ -20,12 +23,12 @@ public class Sale {
 
     /* Creates new instance and saves time of sale */
     public Sale() {
-        setDateAndTimeOfSale();
-
         //should have a list
         listItem = new ArrayList<Item>();
         runningTotalIncVat = 0;
         totalVat = 0;
+        quantity = 0;
+
 
 
     }
@@ -43,6 +46,7 @@ public class Sale {
     /* Adds an Item to the list */
     public LatestRegisteredItemDTO addItem(ItemDTO scanItem) {
         boolean itemFound = false;
+        int numberOfItems = quantity;
 
         for (Item oneItem : listItem) {
             if (oneItem.getItemDTO().getIdentifierOfItem()==(scanItem.getIdentifierOfItem())) {
@@ -59,13 +63,15 @@ public class Sale {
 
         runningTotalIncVat += scanItem.getPriceOfItemIncVat();
         totalVat += scanItem.getVatPriceForItem();
+
+
         LatestRegisteredItemDTO saleInfo = new LatestRegisteredItemDTO(scanItem, runningTotalIncVat, totalVat);
 
         return saleInfo;
     }
 
 
-    public PaymentDTO addpayment(double paymentByCostumer){
+    public PaymentDTO addPayment(double paymentByCostumer){
 
         this.cashRegister = new CashRegister();
         cashRegister.pay(this.runningTotalIncVat, paymentByCostumer);
@@ -74,23 +80,16 @@ public class Sale {
     public Receipt addReceipt(){
         PaymentDTO saleInfo = cashRegister.getPaymentInfo();
 
-        this.receipt = new Receipt(saleInfo,listItem);
-
-
+        this.receipt = new Receipt(saleInfo,listItem,totalVat,quantity);
 
         return this.receipt;
     }
-
-
 
 
     public ArrayList<Item> getListItem() {
         return listItem;
     }
 
-    public double getRunningTotalIncVat() {
-        return runningTotalIncVat;
-    }
 
     }
 

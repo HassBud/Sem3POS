@@ -3,7 +3,6 @@ package se.kth.iv1350.sempos.model;
 public class PaymentDTO {
 
     private double totalPaymentByCostumer;
-    private double totalVat;
     private double change;
     private double runningTotal;
 
@@ -13,12 +12,9 @@ public class PaymentDTO {
         this.runningTotal = runningTotal;
     }
 
+
     public double getTotalPaymentByCostumer() {
         return totalPaymentByCostumer;
-    }
-
-    public double getTotalVat() {
-        return totalVat;
     }
 
     public double getChange() {

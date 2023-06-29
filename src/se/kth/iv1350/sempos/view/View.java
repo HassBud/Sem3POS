@@ -3,7 +3,6 @@ import se.kth.iv1350.sempos.controller.Controller;
 import se.kth.iv1350.sempos.model.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 
 /*
@@ -29,6 +28,9 @@ public class View {
         scanItem(1);
         scanItem(2);
         scanItem(1);
+        scanItem(3);
+
+
 
         payment(200);
         receipt();
@@ -44,6 +46,7 @@ public class View {
         System.out.println("Item: " + saleInfo.getItemDescription());
         System.out.println("Price: " + saleInfo.getItemPrice());
         System.out.println("Total Price: " + String.format("%.2f",saleInfo.getRunningTotalIncVat()));
+        System.out.println("Price: " + saleInfo.getNumberOfItems());
         System.out.println();
     }
 
@@ -57,16 +60,22 @@ public class View {
     private void receipt(){
 
         Receipt receiptInfo = contr.getReceipt();
-        System.out.println("Receipt is printed: ");
+        System.out.println("Receipt is created: \n" + "Time/Date: " + receiptInfo.getLocalDateTime());
         System.out.println();
         ArrayList<Item> list = receiptInfo.getRecordsOfItems();
         for (int i = 0; i < list.size(); i++) {
             Item extractedItem = list.get(i);
             String itemName = extractedItem.getItemDTO().getNameOfItem();
             double itemPrice = extractedItem.getItemDTO().getPriceOfItemIncVat();
-            double vatPrice = extractedItem.getItemDTO().getVatPriceForItem();
-            System.out.println(itemName + ": " + itemPrice + " kr, " + "Vat: " + vatPrice);
+            int itemQuantity = extractedItem.getNumberOfItems();
+            System.out.println("Item:  " + itemName + "         Price: " + itemPrice + ":-     " + "        Quantity: " + itemQuantity );
         }
+
+        System.out.println("Running Total:                      " + receiptInfo.getTotalAmountOfSaleIncVAT());
+        System.out.println("Total Vat:                          " + String.format("%.2f",receiptInfo.getTotalVat()));
+        System.out.println("Amount payed by costumer:           " + receiptInfo.getAmountPayed());
+        System.out.println("Change:                             " + receiptInfo.getChangeBack());
+
 
 
 

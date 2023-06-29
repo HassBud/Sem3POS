@@ -7,6 +7,7 @@ public class ItemDTO {
     private double priceOfItem; //price without tax
     private double vatPriceForItem; // tax price
     private double vat;
+    private int quantity;
 
     private double priceOfItemIncVat;
 
@@ -20,15 +21,16 @@ public class ItemDTO {
 
 
 
-    public ItemDTO(int identifierOfItem, String nameOfItem, double priceOfItem, double vat) {
+    public ItemDTO(int identifierOfItem, String nameOfItem, double priceOfItem, double vat, int quantity) {
         this.identifierOfItem = identifierOfItem;
         this.nameOfItem = nameOfItem;
         this.priceOfItem = priceOfItem;
         this.vat = vat;
-
         this.vatPriceForItem = priceOfItem * vat;
         this.priceOfItemIncVat = priceOfItem + this.vatPriceForItem;
+        this.quantity = quantity;
     }
+
 
 
 
@@ -41,24 +43,18 @@ public class ItemDTO {
         return identifierOfItem;
     }
 
-    public void setIdentifierOfItem(int itemID) {
-        this.identifierOfItem = itemID;
-
-
-    }
     public double getVatPriceForItem() {
         return vatPriceForItem;
     }
     public double getPriceOfItem() {
         return priceOfItem;
     }
+
     public String getNameOfItem() {
         return nameOfItem;
     }
     public double getPriceOfItemIncVat() {
         return this.priceOfItemIncVat;
     }
-    public double getVat() {
-        return vat;
-    }
+
 }

@@ -4,6 +4,8 @@ package se.kth.iv1350.sempos.model;
 import java.util.ArrayList;
 
 public class Item{
+
+    private int quantity;
     private int numberOfItems;
     ItemDTO itemDTO;
 
@@ -19,11 +21,14 @@ public class Item{
         numberOfItems = 1;
     }
 
-
     //should have a getIdentifierOfItem/setidentifierOfItem
     //incrementNumberOfItems --> see the new class Item
     public ItemDTO getItemDTO() {
         return this.itemDTO;
+    }
+
+    public int getNumberOfItems() {
+        return numberOfItems;
     }
 
 
@@ -34,7 +39,5 @@ public class Item{
     public void incrementNumberOfItems() {
         numberOfItems++;
     }
-
-
 
 }

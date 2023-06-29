@@ -34,25 +34,19 @@ public class Controller {
 
         return registeredSaleInfo;
     }
-    public PaymentDTO pay(double paymentByCostumer){
-        PaymentDTO paymentInfo = sale.addpayment(paymentByCostumer);
 
-      return paymentInfo;
-     }
-     public Receipt getReceipt(){
-       return sale.addReceipt();
-     }
+    public PaymentDTO pay(double paymentByCostumer) {
+        PaymentDTO paymentInfo = sale.addPayment(paymentByCostumer);
 
+        return paymentInfo;
+    }
 
-
-
-
-
-    /* Skriv här */
-    public double endSale() {
-        return 0;
+    public Receipt getReceipt() {
+        return sale.addReceipt();
     }
 
 }
+
+
 
 
