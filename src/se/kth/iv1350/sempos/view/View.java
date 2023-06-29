@@ -25,9 +25,10 @@ public class View {
         contr.startSale();
         System.out.println("A new sale has been started.");
 
-        scanItem(1, 3);
-        scanItem(2,1);
-        scanItem(3,2);
+        scanItem(1,2);
+        scanItem(2,3);
+        scanItem(3,5);
+        scanItem(3,1);
 
 
 
@@ -74,7 +75,7 @@ public class View {
         System.out.println("Running Total:                      " + receiptInfo.getTotalAmountOfSaleIncVAT());
         System.out.println("Total Vat:                          " + String.format("%.2f",receiptInfo.getTotalVat()));
         System.out.println("Amount payed by costumer:           " + receiptInfo.getAmountPayed());
-        System.out.println("Change:                             " + receiptInfo.getChangeBack());
+        System.out.println("Change:                             " + String.format("%.2f",receiptInfo.getChangeBack()));
 
 
 

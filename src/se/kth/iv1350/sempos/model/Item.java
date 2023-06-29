@@ -16,7 +16,7 @@ public class Item{
     } */
     public Item(ItemDTO newItemDTO){
         itemDTO = newItemDTO;
-        numberOfItems = 1;
+        numberOfItems = 0;
     }
 
     //should have a getIdentifierOfItem/setidentifierOfItem
@@ -27,10 +27,11 @@ public class Item{
 
 
 
+
     //method for increment number of items
 
     public void incrementNumberOfItems(int quantity) {
-        numberOfItems++;
+        numberOfItems = numberOfItems + quantity;
     }
     //getter for numberOfItems
     public int getNumberOfItems() {
