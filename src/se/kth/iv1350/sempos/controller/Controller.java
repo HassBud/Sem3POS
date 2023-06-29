@@ -16,6 +16,7 @@ public class Controller {
     private Receipt receipt;
 
     /* Starts a new sale. This method must be called first.*/
+
     public void startSale() {
         sale = new Sale();
     }

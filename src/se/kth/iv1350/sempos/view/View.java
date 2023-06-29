@@ -30,15 +30,9 @@ public class View {
         scanItem(3,5);
         scanItem(3,1);
 
-
-
-
         payment(200);
+
         receipt();
-
-
-
-
     }
 
     private void scanItem(int itemIdentifier, int quantity){
@@ -77,14 +71,6 @@ public class View {
         System.out.println("Amount payed by costumer:           " + receiptInfo.getAmountPayed());
         System.out.println("Change:                             " + String.format("%.2f",receiptInfo.getChangeBack()));
 
-
-
-
-
-
     }
-
-
-
 
 }
