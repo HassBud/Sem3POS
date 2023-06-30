@@ -32,10 +32,8 @@ public class Receipt {
 
 
     /* Update receipt */
-    public void addItemToReceipt (ArrayList<Item> addedItems) { // ska det vara Sale eller Item i som Parameter i argumenten?
-        for (Item item : addedItems) {
-            recordsOfItems.add(item);
-        }
+    public void addItemToReceipt (ArrayList<Item> addedItem) { // ska det vara Sale eller Item i som Parameter i argumenten?
+       recordsOfItems.addAll(addedItem);
     }
 
 
