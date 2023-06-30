@@ -25,10 +25,8 @@ public class View {
         contr.startSale();
         System.out.println("A new sale has been started.");
 
-        scanItem(1,2);
-        scanItem(2,3);
-        scanItem(3,5);
-        scanItem(3,1);
+        scanItem(1,1);
+
 
         payment(200);
 

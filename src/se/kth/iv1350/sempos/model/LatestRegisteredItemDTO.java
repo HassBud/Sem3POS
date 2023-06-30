@@ -30,9 +30,6 @@ public class LatestRegisteredItemDTO {
         return runningTotalIncVat;
     }
 
-    public double getTotalVat() {
-        return totalVat;
-    }
 
     public double getNumberOfItems() {
         return numberOfItems;

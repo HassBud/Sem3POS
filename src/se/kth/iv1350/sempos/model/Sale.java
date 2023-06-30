@@ -8,8 +8,7 @@ public class Sale {
     private LocalDateTime saleTime;
     private Receipt receipt;
     private ArrayList<Item> listItem;
-    private SaleLog saleLog;
-    private PaymentDTO paymentDTO;
+
     private CashRegister cashRegister;
     private double runningTotalIncVat;
     private double totalVat;
@@ -27,15 +26,6 @@ public class Sale {
         listItem = new ArrayList<Item>();
         runningTotalIncVat = 0;
         totalVat = 0;
-    }
-    /*
-    public void updatedReceipt(ArrayList<Item> items){
-        listItem = items;
-    }*/
-
-    /* Represents time of sale */
-    private void setDateAndTimeOfSale() {
-        saleTime = LocalDateTime.now();
     }
 
 
@@ -68,6 +58,7 @@ public class Sale {
     }
 
 
+
     public PaymentDTO addPayment(double paymentByCostumer){
 
         this.cashRegister = new CashRegister();
@@ -80,11 +71,6 @@ public class Sale {
         this.receipt = new Receipt(saleInfo,listItem,totalVat);
 
         return this.receipt;
-    }
-
-
-    public ArrayList<Item> getListItem() {
-        return listItem;
     }
 
 

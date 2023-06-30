@@ -12,8 +12,7 @@ public class Receipt {
     private ArrayList <Item> recordsOfItems;
     private double amountPayed;
     private double changeBack;
-    private String nameOfItem;
-    private double priceOfItem;
+
     private double totalAmountOfSaleIncVAT;
     private double totalVat;
     private LocalDateTime localDateTime;
@@ -32,9 +31,7 @@ public class Receipt {
 
 
     /* Update receipt */
-    public void addItemToReceipt (ArrayList<Item> addedItem) { // ska det vara Sale eller Item i som Parameter i argumenten?
-       recordsOfItems.addAll(addedItem);
-    }
+
 
 
     /* Getters for all the attributes */
@@ -49,14 +46,6 @@ public class Receipt {
 
     public double getChangeBack() {
         return changeBack;
-    }
-
-    public String getNameOfItem() {
-        return nameOfItem;
-    }
-
-    public double getPriceOfItem() {
-        return priceOfItem;
     }
 
     public double getTotalAmountOfSaleIncVAT() {
