@@ -6,7 +6,7 @@ public class LatestRegisteredItemDTO {
     private double itemPriceIncVat;
     private double runningTotalIncVat;
     private double totalVat;
-    private double numberOfItems;
+    private int numberOfItems; //Ändrade till int
 
 
 
@@ -31,8 +31,8 @@ public class LatestRegisteredItemDTO {
     }
 
 
-    public double getNumberOfItems() {
+    public int getNumberOfItems() {
         return numberOfItems;
-    }
+    } //ändrade till int
 
 }

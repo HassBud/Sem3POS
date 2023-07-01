@@ -48,11 +48,13 @@ public class InventorySystem {
 
 
             if (currentInventory != null) {
-                int currentQuantity = currentInventory.getQuantity();
+                int currentQuantity = item.getNumberOfItems(); ////Vi har numberOfItems i LatestRegisteredItemDTO.
+                //Är det records of items man hämtar ifrån istället? Eftersom vi har den i ReceiptDTO
+                //Vi har även i Item, så väljer därifrån för tillfället
                 int updatedQuantity = currentQuantity - quantityPurchased;
 
-                currentInventory.setQuantity(updatedQuantity);
-                System.out.println("Quantity in inventory for this item: " + currentStock.getNameOfItem());
+                currentInventory.setQuantity(updatedQuantity); //Hårdkoda hur många äpplen kunden köper?
+                System.out.println("Quantity in inventory for this item: " + currentStock.getNameOfItem()); //Måste vi hårdkoda en inventory? Typ lägga in att vi har 5 äpplen?
             } else {
                 System.out.println("This item is not in stock");
             }
