@@ -22,11 +22,11 @@ class InventorySystemTest {
     @Test
     void getItemInformation() {
         ItemDTO firstItem = testItemID.getItemInformation(1);
-        assertEquals(1,firstItem.getIdentifierOfItem(), "Item Äpple exists");
+        assertEquals(1,firstItem.getIdentifierOfItem(), "Item ID does not match");
         ItemDTO secondItem = testItemID.getItemInformation(2);
-        assertEquals(2,secondItem.getIdentifierOfItem(), "Item Bok exists");
+        assertEquals(2,secondItem.getIdentifierOfItem(), "Item ID does not match");
         ItemDTO thirdItem = testItemID.getItemInformation(3);
-        assertEquals(3,thirdItem.getIdentifierOfItem(), "Item Mjölk exists");
+        assertEquals(3,thirdItem.getIdentifierOfItem(), "Item ID does not match");
         ItemDTO itemNotOnList = testItemID.getItemInformation(5);
         assertNull(itemNotOnList, "No existing Item");
 
