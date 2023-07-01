@@ -1,16 +1,12 @@
 package se.kth.iv1350.sempos.Integration;
 
-import se.kth.iv1350.sempos.model.Item;
-import se.kth.iv1350.sempos.model.Receipt;
-
-
-import java.util.ArrayList;
+import se.kth.iv1350.sempos.model.ReceiptDTO;
 
 
 /* Skriv här */
 public class AccountingSystem {
 
-    private Receipt receipt;
+    private ReceiptDTO receiptDTO;
     private double runningTotal;
 
     /* Skriv här */

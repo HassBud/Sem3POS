@@ -6,9 +6,8 @@ import java.util.ArrayList;
 /* One sale made in system */
 public class Sale {
     private LocalDateTime saleTime;
-    private Receipt receipt;
+    private ReceiptDTO receiptDTO;
     private ArrayList<Item> listItem;
-
     private CashRegister cashRegister;
     private double runningTotalIncVat;
     private double totalVat;
@@ -65,12 +64,12 @@ public class Sale {
         cashRegister.pay(this.runningTotalIncVat, paymentByCostumer);
         return cashRegister.getPaymentInfo();
     }
-    public Receipt addReceipt(){
+    public ReceiptDTO addReceipt(){
         PaymentDTO saleInfo = cashRegister.getPaymentInfo();
 
-        this.receipt = new Receipt(saleInfo,listItem,totalVat);
+        this.receiptDTO = new ReceiptDTO(saleInfo,listItem,totalVat);
 
-        return this.receipt;
+        return this.receiptDTO;
     }
 
 

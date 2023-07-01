@@ -2,13 +2,13 @@ package se.kth.iv1350.sempos.Integration;
 
 import se.kth.iv1350.sempos.model.Item;
 import se.kth.iv1350.sempos.model.ItemDTO;
-import se.kth.iv1350.sempos.model.Receipt;
+import se.kth.iv1350.sempos.model.ReceiptDTO;
 
 import java.util.ArrayList;
 
 /* Skriv här */
 public class InventorySystem {
-    private Receipt receipt;
+    private ReceiptDTO receiptDTO;
 
     /* Constructor */
     public InventorySystem() {
@@ -29,7 +29,7 @@ public class InventorySystem {
 
     /* Skriv här */
     public void updateInventory() { // skall den vara void eller skall den returnera något??
-        ArrayList<Item> items = receipt.getRecordsOfItems();
+        ArrayList<Item> items = receiptDTO.getRecordsOfItems();
     }
 }
 

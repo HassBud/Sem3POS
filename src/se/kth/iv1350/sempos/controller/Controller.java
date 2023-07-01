@@ -13,7 +13,7 @@ public class Controller {
     private AccountingSystem accountingSystem;
     private LatestRegisteredItemDTO latestRegisteredItemDTO;
     private PaymentDTO paymentDTO;
-    private Receipt receipt;
+    private ReceiptDTO receiptDTO;
 
     /* Starts a new sale. This method must be called first.*/
 
@@ -42,7 +42,7 @@ public class Controller {
         return paymentInfo;
     }
 
-    public Receipt getReceipt() {
+    public ReceiptDTO getReceipt() {
         return sale.addReceipt();
     }
 

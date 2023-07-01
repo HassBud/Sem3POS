@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 /* Represents the created receipt for the sale. Proves the payment for the sale */
-public class Receipt {
+public class ReceiptDTO {
 
 
 
@@ -12,14 +12,13 @@ public class Receipt {
     private ArrayList <Item> recordsOfItems;
     private double amountPayed;
     private double changeBack;
-
     private double totalAmountOfSaleIncVAT;
     private double totalVat;
     private LocalDateTime localDateTime;
 
     /* Receipt constructor */
 
-    public Receipt( PaymentDTO paymentInfo, ArrayList<Item> rec, double totalVat){
+    public ReceiptDTO(PaymentDTO paymentInfo, ArrayList<Item> rec, double totalVat){
         this.amountPayed = paymentInfo.getTotalPaymentByCostumer();
         this.changeBack = paymentInfo.getChange();
         this.recordsOfItems = new ArrayList<>(rec);
@@ -28,10 +27,6 @@ public class Receipt {
         this.localDateTime = java.time.LocalDateTime.now();
 
     }
-
-
-    /* Update receipt */
-
 
 
     /* Getters for all the attributes */

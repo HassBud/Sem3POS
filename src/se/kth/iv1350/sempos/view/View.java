@@ -52,10 +52,10 @@ public class View {
     }
     private void receipt(){
 
-        Receipt receiptInfo = contr.getReceipt();
-        System.out.println("Receipt is created: \n" + "Time/Date: " + receiptInfo.getLocalDateTime());
+        ReceiptDTO receiptDTOInfo = contr.getReceipt();
+        System.out.println("Receipt is created: \n" + "Time/Date: " + receiptDTOInfo.getLocalDateTime());
         System.out.println();
-        ArrayList<Item> list = receiptInfo.getRecordsOfItems();
+        ArrayList<Item> list = receiptDTOInfo.getRecordsOfItems();
         for (int i = 0; i < list.size(); i++) {
             Item extractedItem = list.get(i);
             String itemName = extractedItem.getItemDTO().getNameOfItem();
@@ -64,10 +64,10 @@ public class View {
             System.out.println("Item:  " + itemName + "         Price: " + itemPrice + ":-     " + "        Quantity: " + itemQuantity );
         }
 
-        System.out.println("Running Total:                      " + String.format("%.2f",receiptInfo.getTotalAmountOfSaleIncVAT()));
-        System.out.println("Total Vat:                          " + String.format("%.2f",receiptInfo.getTotalVat()));
-        System.out.println("Amount payed by costumer:           " + receiptInfo.getAmountPayed());
-        System.out.println("Change:                             " + String.format("%.2f",receiptInfo.getChangeBack()));
+        System.out.println("Running Total:                      " + String.format("%.2f", receiptDTOInfo.getTotalAmountOfSaleIncVAT()));
+        System.out.println("Total Vat:                          " + String.format("%.2f", receiptDTOInfo.getTotalVat()));
+        System.out.println("Amount payed by costumer:           " + receiptDTOInfo.getAmountPayed());
+        System.out.println("Change:                             " + String.format("%.2f", receiptDTOInfo.getChangeBack()));
 
     }
 
