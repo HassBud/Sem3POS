@@ -14,6 +14,7 @@ public class CashRegister {
 
 
     public PaymentDTO getPaymentInfo() {
+
         return paymentInfo;
     }
 }
