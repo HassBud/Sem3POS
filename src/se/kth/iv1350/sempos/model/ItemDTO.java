@@ -10,6 +10,9 @@ public class ItemDTO {
     private double priceOfItemIncVat;
     private int quantityInInventory;
 
+    //OBS! För att få in quantity i lager skriver jag in denna
+    private int quantity;    //Antal varor i lager
+
     //constructor for itemDTO
     /*
      *  Creates a new instance.
@@ -55,6 +58,13 @@ public class ItemDTO {
         return quantityInInventory;
     }
 
+    //getter och setter för quantity på lager i inventorySystem | lär ej behövas när vi har getQuantityInInventory
+    /*public int getQuanity(){
+        return quanity;
+    }*/
+    public void setQuantity(int quantity){
+        this.quantity = quantity;
+    }
 
 
 }
