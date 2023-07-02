@@ -7,9 +7,8 @@ public class ItemDTO {
     private double priceOfItem; //price without tax
     private double vatPriceForItem; // tax price
     private double vat;
-
-
     private double priceOfItemIncVat;
+    private int quantityInInventory;
 
     //constructor for itemDTO
     /*
@@ -21,20 +20,16 @@ public class ItemDTO {
 
 
 
-    public ItemDTO(int identifierOfItem, String nameOfItem, double priceOfItem, double vat) {
+    public ItemDTO(int identifierOfItem, String nameOfItem, double priceOfItem, double vat, int quantityInInventory) {
         this.identifierOfItem = identifierOfItem;
         this.nameOfItem = nameOfItem;
         this.priceOfItem = priceOfItem;
         this.vat = vat;
         this.vatPriceForItem = priceOfItem * vat;
         this.priceOfItemIncVat = priceOfItem + this.vatPriceForItem;
+        this.quantityInInventory = quantityInInventory;
 
     }
-
-
-
-
-
 
     //should have a getIdentifierOfItem/setidentifierOfItem
     //incrementNumberOfItems --> see the new class Item
@@ -55,6 +50,9 @@ public class ItemDTO {
     }
     public double getPriceOfItemIncVat() {
         return this.priceOfItemIncVat;
+    }
+    public int getQuantityInInventory() {
+        return quantityInInventory;
     }
 
 

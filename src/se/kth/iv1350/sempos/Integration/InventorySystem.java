@@ -18,11 +18,11 @@ public class InventorySystem {
     /* Hard coded information about each item available in the store */
     public ItemDTO getItemInformation(int identifierOfItem) {
         if (identifierOfItem == 1)
-            return new ItemDTO(1, "Äpple", 5, 0.06);
+            return new ItemDTO(1, "Äpple", 5, 0.06, 100);
         else if (identifierOfItem == 2)
-            return new ItemDTO(2, "Bok", 25, 0.25);
+            return new ItemDTO(2, "Bok", 25, 0.25, 100);
         else if (identifierOfItem == 3)
-            return new ItemDTO(3, "Mjölk", 10, 0.12);
+            return new ItemDTO(3, "Mjölk", 10, 0.12,100);
         else
             return null;
     }
@@ -48,13 +48,13 @@ public class InventorySystem {
 
 
             if (currentInventory != null) {
-                int currentQuantity = item.getNumberOfItems(); ////Vi har numberOfItems i LatestRegisteredItemDTO.
+                int currentQuantity = itemDTO.getQuantityInInventory();/*getNumberOfItems()*/; ////Vi har numberOfItems i LatestRegisteredItemDTO.
                 //Är det records of items man hämtar ifrån istället? Eftersom vi har den i ReceiptDTO
                 //Vi har även i Item, så väljer därifrån för tillfället
                 int updatedQuantity = currentQuantity - quantityPurchased;
 
                 currentInventory.setQuantity(updatedQuantity); //Hårdkoda hur många äpplen kunden köper?
-                System.out.println("Quantity in inventory for this item: " + currentStock.getNameOfItem()); //Måste vi hårdkoda en inventory? Typ lägga in att vi har 5 äpplen?
+                System.out.println("Quantity in inventory for this item: " + currentInventory.getQuantityInInventory()/*currentStock.getNameOfItem()*/); //Måste vi hårdkoda en inventory? Typ lägga in att vi har 5 äpplen?
             } else {
                 System.out.println("This item is not in stock");
             }
