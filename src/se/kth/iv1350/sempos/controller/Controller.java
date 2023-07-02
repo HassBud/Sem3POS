@@ -46,6 +46,8 @@ public class Controller {
         return sale.addReceipt();
     }
 
+
+
 }
 
 

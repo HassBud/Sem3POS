@@ -32,7 +32,7 @@ public class InventorySystem {
     //public void updateInventory() { // skall den vara void eller skall den returnera något??
     //ArrayList<Item> items = receiptDTO.getRecordsOfItems();
     //}
-    public void updateInventory(ReceiptDTO receiptDTO) { //Används ännu inte
+   /* public void updateInventory(ReceiptDTO receiptDTO) { //Används ännu inte
         ArrayList<Item> items = receiptDTO.getRecordsOfItems();
 
 
@@ -51,15 +51,17 @@ public class InventorySystem {
                 int currentQuantity = itemDTO.getQuantityInInventory();/*getNumberOfItems()*/; ////Vi har numberOfItems i LatestRegisteredItemDTO.
                 //Är det records of items man hämtar ifrån istället? Eftersom vi har den i ReceiptDTO
                 //Vi har även i Item, så väljer därifrån för tillfället
-                int updatedQuantity = currentQuantity - quantityPurchased;
+               /* int updatedQuantity = currentQuantity - quantityPurchased;
 
                 currentInventory.setQuantity(updatedQuantity); //Hårdkoda hur många äpplen kunden köper?
-                System.out.println("Quantity in inventory for this item: " + currentInventory.getQuantityInInventory()/*currentStock.getNameOfItem()*/); //Måste vi hårdkoda en inventory? Typ lägga in att vi har 5 äpplen?
-            } else {
+                System.out.println("Quantity in inventory for this item: "" + currentInventory.getQuantityInInventory()/*currentStock.getNameOfItem()); //Måste vi hårdkoda en inventory? Typ lägga in att vi har 5 äpplen?
+           /* } else {
                 System.out.println("This item is not in stock");
             }
+
         }
-    }
+    }*/
+
 }
 
 
