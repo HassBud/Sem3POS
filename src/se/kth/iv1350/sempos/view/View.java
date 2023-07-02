@@ -31,6 +31,7 @@ public class View {
         payment(200);
 
         receipt();
+        updateInventoryQuantity();
     }
 
     private void scanItem(int itemIdentifier, int quantity){
@@ -69,6 +70,9 @@ public class View {
         System.out.println("Amount payed by costumer:           " + receiptDTOInfo.getAmountPayed());
         System.out.println("Change:                             " + String.format("%.2f", receiptDTOInfo.getChangeBack()));
 
+    }
+    private void updateInventoryQuantity(){
+        contr.inventoryUpdate();
     }
 
 }

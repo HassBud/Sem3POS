@@ -16,15 +16,18 @@ public class ReceiptDTO {
     private double totalVat;
     private LocalDateTime localDateTime;
 
+    private int itemID;
+
     /* Receipt constructor */
 
-    public ReceiptDTO(PaymentDTO paymentInfo, ArrayList<Item> rec, double totalVat){
+    public ReceiptDTO(PaymentDTO paymentInfo, ArrayList<Item> rec, double totalVat, Item getItemID){
         this.amountPayed = paymentInfo.getTotalPaymentByCostumer();
         this.changeBack = paymentInfo.getChange();
         this.recordsOfItems = new ArrayList<>(rec);
         this.totalAmountOfSaleIncVAT = paymentInfo.getRunningTotal();
         this.totalVat = totalVat;
         this.localDateTime = java.time.LocalDateTime.now();
+        this.itemID = getItemID.itemDTO.getIdentifierOfItem();
 
     }
 
@@ -51,6 +54,9 @@ public class ReceiptDTO {
     }
     public LocalDateTime getLocalDateTime() {
         return localDateTime;
+    }
+    public int getItemID() {
+        return itemID;
     }
 
 

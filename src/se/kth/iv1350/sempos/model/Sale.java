@@ -11,11 +11,9 @@ public class Sale {
     private CashRegister cashRegister;
     private double runningTotalIncVat;
     private double totalVat;
-
-
-
-
-
+    private LogSale logSale;
+    private int quantity;
+    private Item itemID;
 
 
 
@@ -25,6 +23,7 @@ public class Sale {
         listItem = new ArrayList<Item>();
         runningTotalIncVat = 0;
         totalVat = 0;
+        this.quantity = 0;
     }
 
 
@@ -49,13 +48,10 @@ public class Sale {
         runningTotalIncVat += scanItem.getPriceOfItemIncVat() * quantity;
         totalVat += scanItem.getVatPriceForItem() * quantity;
 
-
-
         LatestRegisteredItemDTO saleInfo = new LatestRegisteredItemDTO(scanItem, runningTotalIncVat, totalVat, quantity);
 
         return saleInfo;
     }
-
 
 
     public PaymentDTO addPayment(double paymentByCostumer){
@@ -67,13 +63,17 @@ public class Sale {
     public ReceiptDTO addReceipt(){
         PaymentDTO saleInfo = cashRegister.getPaymentInfo();
 
-        this.receiptDTO = new ReceiptDTO(saleInfo,listItem,totalVat);
+        this.receiptDTO = new ReceiptDTO(saleInfo,listItem,totalVat, itemID);
 
         return this.receiptDTO;
     }
-
-
+    public void inventoryUpdate(){
+        logSale.updateInventory(this.receiptDTO);
     }
+
+
+
+}
 
 
 
