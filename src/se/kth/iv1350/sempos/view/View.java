@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 public class View {
     private Controller contr;
+
     /* Creates a new instance
     * @param contr The controller to use for all calls to other layers. */
     public View(Controller contr){
@@ -26,12 +27,12 @@ public class View {
         System.out.println("A new sale has been started.");
 
         scanItem(1,1);
-
+        scanItem(2,2);
 
         payment(200);
 
         receipt();
-        updateInventoryQuantity();
+
     }
 
     private void scanItem(int itemIdentifier, int quantity){
@@ -71,8 +72,7 @@ public class View {
         System.out.println("Change:                             " + String.format("%.2f", receiptDTOInfo.getChangeBack()));
 
     }
-    private void updateInventoryQuantity(){
-        contr.inventoryUpdate();
-    }
+
+
 
 }

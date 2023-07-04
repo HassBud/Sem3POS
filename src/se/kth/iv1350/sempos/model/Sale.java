@@ -11,9 +11,9 @@ public class Sale {
     private CashRegister cashRegister;
     private double runningTotalIncVat;
     private double totalVat;
-    private LogSale logSale;
-    private int quantity;
-    private Item itemID;
+    private int quantityOfEachItem;
+
+
 
 
 
@@ -21,9 +21,10 @@ public class Sale {
     public Sale() {
         //should have a list
         listItem = new ArrayList<Item>();
+
         runningTotalIncVat = 0;
         totalVat = 0;
-        this.quantity = 0;
+        quantityOfEachItem = 0;
     }
 
 
@@ -63,13 +64,17 @@ public class Sale {
     public ReceiptDTO addReceipt(){
         PaymentDTO saleInfo = cashRegister.getPaymentInfo();
 
-        this.receiptDTO = new ReceiptDTO(saleInfo,listItem,totalVat, itemID);
+        this.receiptDTO = new ReceiptDTO(saleInfo,listItem,totalVat);
 
         return this.receiptDTO;
     }
-    public void inventoryUpdate(){
-        logSale.updateInventory(this.receiptDTO);
+
+
+    public int getQuantityOfEachItem() {
+        return quantityOfEachItem;
     }
+
+
 
 
 

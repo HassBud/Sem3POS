@@ -8,10 +8,7 @@ public class ItemDTO {
     private double vatPriceForItem; // tax price
     private double vat;
     private double priceOfItemIncVat;
-    private int quantityInInventory;
 
-    //OBS! För att få in quantity i lager skriver jag in denna
-    private int quantity;    //Antal varor i lager
 
     //constructor for itemDTO
     /*
@@ -23,14 +20,13 @@ public class ItemDTO {
 
 
 
-    public ItemDTO(int identifierOfItem, String nameOfItem, double priceOfItem, double vat, int quantityInInventory) {
+    public ItemDTO(int identifierOfItem, String nameOfItem, double priceOfItem, double vat) {
         this.identifierOfItem = identifierOfItem;
         this.nameOfItem = nameOfItem;
         this.priceOfItem = priceOfItem;
         this.vat = vat;
         this.vatPriceForItem = priceOfItem * vat;
         this.priceOfItemIncVat = priceOfItem + this.vatPriceForItem;
-        this.quantityInInventory = quantityInInventory;
 
     }
 
@@ -54,17 +50,12 @@ public class ItemDTO {
     public double getPriceOfItemIncVat() {
         return this.priceOfItemIncVat;
     }
-    public int getQuantityInInventory() {
-        return quantityInInventory;
-    }
+
 
     //getter och setter för quantity på lager i inventorySystem | lär ej behövas när vi har getQuantityInInventory
     /*public int getQuanity(){
         return quanity;
     }*/
-    public void setQuantity(int quantity){
-        this.quantity = quantity;
-    }
 
 
 }

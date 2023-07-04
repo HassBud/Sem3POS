@@ -6,18 +6,14 @@ import se.kth.iv1350.sempos.model.ReceiptDTO;
 /* Skriv här */
 public class AccountingSystem {
 
-    private ReceiptDTO receiptDTO;
-    private double runningTotal;
+    /*
+    *  External system receives a receipt with information needed for accounting.
+    * Note that we should not code external system.
+    */
 
-    /* Skriv här */
-    public AccountingSystem() {
+    public void externalSystemUpdateAccounting(ReceiptDTO receiptDTO){
+
     }
 
-    /* Skriv här vad skall vara i DeliverInfo metoden? */
-  /*  public void deliverInformationToAccounting(){
-      ArrayList<Item> items = receipt.getRecordsOfItems();
-      double runningTotal = receipt.getRunningTotal();
 
-
-    }*/
 }

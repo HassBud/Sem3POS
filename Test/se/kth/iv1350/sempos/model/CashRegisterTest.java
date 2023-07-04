@@ -23,8 +23,8 @@ class CashRegisterTest {
     void pay() {
         double changeToCostumer = testPayment.getChange();
         testChange.pay(200,50);
-        double countedChange = testChange.getPaymentInfo().getChange();
-        assertNotEquals(changeToCostumer,countedChange, "Failed to match change");
+        double expectedChange = 200-50;
+        assertEquals(changeToCostumer,expectedChange, "Failed to match change");
 
     }
 

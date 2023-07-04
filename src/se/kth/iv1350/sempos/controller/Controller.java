@@ -6,6 +6,7 @@ import se.kth.iv1350.sempos.model.*;
 import java.util.ArrayList;
 
 
+
 /*
 * This is the applications only controller. All objects to model pass through here
 * */
@@ -16,7 +17,8 @@ public class Controller {
     private LatestRegisteredItemDTO latestRegisteredItemDTO;
     private PaymentDTO paymentDTO;
     private ReceiptDTO receiptDTO;
-    private LogSale logSale;
+
+
 
     /* Starts a new sale. This method must be called first.*/
 
@@ -42,7 +44,8 @@ public class Controller {
 
     public PaymentDTO pay(double paymentByCostumer) {
         PaymentDTO paymentInfo = sale.addPayment(paymentByCostumer);
-
+        inventory.externalSystemUpdateInventory(receiptDTO);
+        accountingSystem.externalSystemUpdateAccounting(receiptDTO);
         return paymentInfo;
     }
 
@@ -50,14 +53,15 @@ public class Controller {
         return sale.addReceipt();
     }
 
-    public void inventoryUpdate(){
-        sale.inventoryUpdate();
+
     }
 
 
 
 
-}
+
+
+
 
 
 

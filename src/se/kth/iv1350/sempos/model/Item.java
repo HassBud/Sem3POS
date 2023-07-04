@@ -8,12 +8,6 @@ public class Item{
     ItemDTO itemDTO;
 
 
-
-   /* public Item(int number, ItemDTO newItemDTO) {
-
-        numberOfItems = number;
-        itemDTO = newItemDTO;
-    } */
     public Item(ItemDTO newItemDTO){
         itemDTO = newItemDTO;
         numberOfItems = 0;
