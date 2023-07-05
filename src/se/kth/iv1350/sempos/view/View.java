@@ -35,6 +35,8 @@ public class View {
 
     }
 
+    /*The item gets scanned and recognized through the parameter itemIdentifier. Thanks to this parameter, the program
+    * can get all relevant information via the getters. */
     private void scanItem(int itemIdentifier, int quantity){
         LatestRegisteredItemDTO saleInfo = contr.registerItem(itemIdentifier, quantity);
         System.out.println("A new item has been registered: ");
@@ -45,6 +47,7 @@ public class View {
         System.out.println();
     }
 
+    /*How much the customer gives as payment. Set to 200 by default.  */
     private void payment(double paymentByCostumer){
         System.out.println("Payment has been registered: ");
         PaymentDTO changeInfo = contr.pay(paymentByCostumer);
@@ -52,6 +55,9 @@ public class View {
         System.out.println("Total amount: " + String.format("%.2f",changeInfo.getTotalPaymentByCostumer()));
         System.out.println();
     }
+
+    /*A list is created with the quantity of each item, the name of the items, the items' prices including VAT,
+    * as well as the time of the sale */
     private void receipt(){
 
         ReceiptDTO receiptDTOInfo = contr.getReceipt();

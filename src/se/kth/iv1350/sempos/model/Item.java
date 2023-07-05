@@ -8,6 +8,7 @@ public class Item{
     ItemDTO itemDTO;
 
 
+    /*Item constructor. Starts out with 0 items stored */
     public Item(ItemDTO newItemDTO){
         itemDTO = newItemDTO;
         numberOfItems = 0;

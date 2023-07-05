@@ -9,7 +9,9 @@ public class LatestRegisteredItemDTO {
     private int numberOfItems; //Ändrade till int
 
 
-
+    /*The constructor LatestRegisteredItemDTO takes the parameters itemInformation, currentTotalPrice, currentTotalVat
+    * and quantity. The information gets stored in the variables itemDescription, itemPriceIncVat, runningTotalIncVat
+    * totalVat, and numberOfItems respectively */
     public LatestRegisteredItemDTO(ItemDTO itemInformation, double currentTotalPrice, double currentTotalVat, int quantity){
         this.itemDescription = itemInformation.getNameOfItem();
         this.itemPriceIncVat = itemInformation.getPriceOfItemIncVat();

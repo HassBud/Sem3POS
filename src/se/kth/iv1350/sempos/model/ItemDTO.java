@@ -19,7 +19,7 @@ public class ItemDTO {
      */
 
 
-
+    /*Constructor for ItemDTO. Stores all the info about the item */
     public ItemDTO(int identifierOfItem, String nameOfItem, double priceOfItem, double vat) {
         this.identifierOfItem = identifierOfItem;
         this.nameOfItem = nameOfItem;
@@ -33,20 +33,28 @@ public class ItemDTO {
     //should have a getIdentifierOfItem/setidentifierOfItem
     //incrementNumberOfItems --> see the new class Item
 
+    /*gets the item number (1, 2 or 3) and stores it in identifierOfItem */
      public int getIdentifierOfItem(){
         return identifierOfItem;
     }
 
+    /*gets the VAT for the item and stores it in vatPriceForItem */
     public double getVatPriceForItem() {
         return vatPriceForItem;
     }
+
+    /*gets the price of the item and stores it in priceOfItem.
+    * OBS! VARFÖR STÅR DET ANVÄNDS EJ. RADERA? */
     public double getPriceOfItem() {
         return priceOfItem;
     }
 
+    /*gets the name of the item and stores it in nameOfItem */
     public String getNameOfItem() {
         return nameOfItem;
     }
+
+    /*gets the price of the item with VAT included. Stores it in priceOfItemIncVat */
     public double getPriceOfItemIncVat() {
         return this.priceOfItemIncVat;
     }

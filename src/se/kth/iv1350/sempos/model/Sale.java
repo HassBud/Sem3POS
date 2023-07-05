@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /* One sale made in system */
 public class Sale {
-    private LocalDateTime saleTime;
+    private LocalDateTime saleTime;  //Ta bort?
     private ReceiptDTO receiptDTO;
     private ArrayList<Item> listItem;
     private CashRegister cashRegister;
@@ -54,13 +54,15 @@ public class Sale {
         return saleInfo;
     }
 
-
+    /*addPayment adds the amount the customer pays (paymentByCustomer) and sends the information to the cashRegister */
     public PaymentDTO addPayment(double paymentByCostumer){
 
         this.cashRegister = new CashRegister();
         cashRegister.pay(this.runningTotalIncVat, paymentByCostumer);
         return cashRegister.getPaymentInfo();
     }
+
+    /*The information about the purchase the customer made gets stored in receiptDTO */
     public ReceiptDTO addReceipt(){
         PaymentDTO saleInfo = cashRegister.getPaymentInfo();
 
@@ -69,14 +71,10 @@ public class Sale {
         return this.receiptDTO;
     }
 
-
+    //Står används ej. Ta bort?
     public int getQuantityOfEachItem() {
         return quantityOfEachItem;
     }
-
-
-
-
 
 }
 

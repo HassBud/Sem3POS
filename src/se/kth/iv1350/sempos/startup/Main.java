@@ -12,13 +12,10 @@ import se.kth.iv1350.sempos.view.View;
 public class Main {
     public static void main(String[] args){
         Controller contr = new Controller(new InventorySystem(), new Sale()); // ??? är det korrekt att ha new InventorySystem() och new Sale() i controllern??
-        View view = new View(contr);
+        View view = new View(contr); //Ändrar jag till controller ist för contr försvinner typo. Chatgpt blir glad också
         view.runFakeExecution();
 
         System.out.println();
-
-
-
 
 
     }
