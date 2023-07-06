@@ -20,7 +20,7 @@ public class Item{
     }
 
     /**
-     * increases number of items with added quantity
+     * increases number of items with added quantity.
      * @param quantity number of items added.
      */
 
