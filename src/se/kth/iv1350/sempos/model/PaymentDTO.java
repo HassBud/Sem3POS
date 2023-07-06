@@ -18,6 +18,9 @@ public class PaymentDTO {
         this.runningTotal = runningTotal;
     }
 
+    /**
+     * Getters for all the attributes.
+     */
 
     public double getTotalPaymentByCostumer() {
         return totalPaymentByCustomer;
