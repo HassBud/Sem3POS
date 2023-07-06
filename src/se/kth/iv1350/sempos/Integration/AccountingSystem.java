@@ -7,7 +7,7 @@ import se.kth.iv1350.sempos.model.ReceiptDTO;
 public class AccountingSystem {
 
     /** External system receives a receipt with information needed for external system AccountingSystem.
-    * @param receiptDTO
+    * @param receiptDTO receives a receipt that sends to external system.
     */
 
     public void externalSystemUpdateAccounting(ReceiptDTO receiptDTO){
