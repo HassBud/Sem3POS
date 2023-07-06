@@ -7,9 +7,10 @@ import java.util.ArrayList;
 
 
 
-/*
+/**
 * This is the applications only controller. All objects to model pass through here
-* */
+*
+ */
 public class Controller {
     private Sale sale;
     private InventorySystem inventory;
@@ -20,7 +21,9 @@ public class Controller {
 
 
 
-    /* Starts a new sale. This method must be called first.*/
+    /**
+     *  Starts a new sale. This method must be called first.
+     */
 
     public void startSale() {
         sale = new Sale();
@@ -43,9 +46,10 @@ public class Controller {
         return registeredSaleInfo;
     }
 
-    /*The pay method has paymentByCustomer as parameter. The customer pays with cash (the parameter),
-     and the payment information gets sent to both external systems. Information about how much
-     the customer has paid is stored in the paymentInfo variable*/
+    /**The <code>PaymentDTO</code> pay method send information about the payment to the external systems
+     * @param paymentByCostumer The amount the customer pay.
+     * @return Information about how much the customer paid gets stored
+     */
     public PaymentDTO pay(double paymentByCostumer) {
         PaymentDTO paymentInfo = sale.addPayment(paymentByCostumer);
         inventory.externalSystemUpdateInventory(receiptDTO);
@@ -53,7 +57,10 @@ public class Controller {
         return paymentInfo;
     }
 
-    /*Saves the sale info to the receipt */
+    /**
+     * Saves the sale info to the receipt
+     * @return the receipt added
+     */
     public ReceiptDTO getReceipt() {
         return sale.addReceipt();
     }
