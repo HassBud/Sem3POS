@@ -30,11 +30,10 @@ public class InventorySystem {
             return null;
     }
 
-    /*
-    *  External system receives a receipt with information needed for the inventory update.
-    * Note that we should not code external system.
+    /** External system receives a receipt with information needed for external system InventorySystem.
+     * @param  receipt a receipt that sends to external system.
      */
-    public void externalSystemUpdateInventory(ReceiptDTO Receipt){
+    public void externalSystemUpdateInventory(ReceiptDTO receipt){
 
     }
 
