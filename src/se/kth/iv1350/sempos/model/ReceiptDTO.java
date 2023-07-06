@@ -26,7 +26,8 @@ public class ReceiptDTO {
      * Receives information from objects that gets stored in the attributes for the class
      * @param paymentInfo represents the total payment done by customer and the change the customer gets back.
      * @param listWithAllScannedItems represents a new instance with all scanned items for the purchase.
-     * @param totalVat represents a new instance with the total vat for the hole purchase. */
+     * @param totalVat represents a new instance with the total vat for the hole purchase.
+     * */
 
     public ReceiptDTO(PaymentDTO paymentInfo, ArrayList<Item> listWithAllScannedItems, double totalVat){
         this.amountPaid = paymentInfo.getTotalPaymentByCostumer();
@@ -40,7 +41,9 @@ public class ReceiptDTO {
     }
 
 
-    /* Getters for all the attributes */
+    /**
+     *  Getters for the attributes
+     *  */
 
 
     public ArrayList<Item> getRecordsOfItems() {
