@@ -8,12 +8,17 @@ import java.util.ArrayList;
 /* Skriv här */
 public class InventorySystem {
 
-    /* Constructor */
+    /**
+     * Constructor for InventorySystem
+     * */
     public InventorySystem() {
     }
 
     /**
-     *  Hard coded information about each item available in the store */
+     *  Hard coded information about each item available in the store.
+     * @param identifierOfItem receives information about each item based of the number received.
+     * @return
+     *  */
     public ItemDTO getItemInformation(int identifierOfItem) {
         if (identifierOfItem == 1)
             return new ItemDTO(1, "Äpple", 5, 0.06);

@@ -17,13 +17,10 @@ public class ReceiptDTO {
     private LocalDateTime localDateTime;
 
 
-    /* Receipt constructor called ReceiptDTO. It has the parameters paymentInfo, rec, and totalVat.
-    * The information from the parameters gets stored in the variables amountPaid, recordsOfItems, and totalVAT.
-    * The variables changeBack and totalAmountOfSaleIncVAT also get their information from paymentInfo. */
-
     /**
      * Receipt constructor creates new instances representing the Receipt.
-     * Receives information from objects that gets stored in the attributes for the class
+     * Receives information from specified {@link PaymentDTO} getters that gets stored in the
+     * attributes for the current class.
      * @param paymentInfo represents the total payment done by customer and the change the customer gets back.
      * @param listWithAllScannedItems represents a new instance with all scanned items for the purchase.
      * @param totalVat represents a new instance with the total vat for the hole purchase.
