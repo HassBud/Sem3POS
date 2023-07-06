@@ -22,13 +22,14 @@ public class Controller {
     /**
      *  Starts a new sale. This method must be called first.
      */
-
     public void startSale() {
         sale = new Sale();
     }
 
 
-    /* Skriv här */
+    /**<code>Controller</code> Creates a new instance-
+     * @param inventory The inventory represented by the instance
+     * @param sale The sale represented by the instance*/
     public Controller(InventorySystem inventory, Sale sale) {
         this.inventory = inventory;
         this.sale = sale;
@@ -36,8 +37,11 @@ public class Controller {
 
     }
 
-    /* registerItem takes the parameters identifierOfItem --> (1, 2 or 3) and quantity.
-    With this method, the specific item and the quantity is stored in registeredSaleInfo */
+    /** The <code>LatestRegisteredItemDTO</code> registerItem method fetches information about the item
+     * @param identifierOfItem The ID of the item
+     * @param quantity The quantity of the item being purchased
+     * @return Information about the item and how many is being purchased is stored
+     */
     public LatestRegisteredItemDTO registerItem(int identifierOfItem, int quantity) {
         ItemDTO itemInfo = inventory.getItemInformation(identifierOfItem);
         LatestRegisteredItemDTO registeredSaleInfo = sale.addItem(itemInfo, quantity);
@@ -57,7 +61,7 @@ public class Controller {
     }
 
     /**
-     * Saves the sale info to the receipt
+     * The <code>ReceiptDTO</code> getReceipt() method saves the sale info to the receipt
      * @return the receipt added
      */
     public ReceiptDTO getReceipt() {
