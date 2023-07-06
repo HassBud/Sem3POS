@@ -15,8 +15,6 @@ public class Controller {
     private Sale sale;
     private InventorySystem inventory;
     private AccountingSystem accountingSystem;
-    private LatestRegisteredItemDTO latestRegisteredItemDTO; //Ta bort?
-    private PaymentDTO paymentDTO;  //Ta bort?
     private ReceiptDTO receiptDTO;
 
 
@@ -34,6 +32,7 @@ public class Controller {
     public Controller(InventorySystem inventory, Sale sale) {
         this.inventory = inventory;
         this.sale = sale;
+        this.accountingSystem = new AccountingSystem();
 
     }
 
