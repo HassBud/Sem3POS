@@ -15,9 +15,10 @@ public class InventorySystem {
     }
 
     /**
-     *  Hard coded information about each item available in the store.
-     * @param identifierOfItem receives information about each item based of the number received.
-     * @return the information of the specific item.
+     *  Hard coded information about each item available in the store. Checks if identifierOfItem
+     *  is equal to a specific number. Re
+     * @param identifierOfItem identifier for a specifik item.
+     * @return The information of the specific item.
      *  */
     public ItemDTO getItemInformation(int identifierOfItem) {
         if (identifierOfItem == 1)
