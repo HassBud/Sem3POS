@@ -17,7 +17,7 @@ public class InventorySystem {
     /**
      *  Hard coded information about each item available in the store.
      * @param identifierOfItem receives information about each item based of the number received.
-     * @return
+     * @return the information of the specific item
      *  */
     public ItemDTO getItemInformation(int identifierOfItem) {
         if (identifierOfItem == 1)
