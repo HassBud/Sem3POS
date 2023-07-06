@@ -12,7 +12,8 @@ public class InventorySystem {
     public InventorySystem() {
     }
 
-    /* Hard coded information about each item available in the store */
+    /**
+     *  Hard coded information about each item available in the store */
     public ItemDTO getItemInformation(int identifierOfItem) {
         if (identifierOfItem == 1)
             return new ItemDTO(1, "Äpple", 5, 0.06);
