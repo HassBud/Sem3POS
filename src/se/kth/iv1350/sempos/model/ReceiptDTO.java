@@ -21,10 +21,17 @@ public class ReceiptDTO {
     * The information from the parameters gets stored in the variables amountPaid, recordsOfItems, and totalVAT.
     * The variables changeBack and totalAmountOfSaleIncVAT also get their information from paymentInfo. */
 
-    public ReceiptDTO(PaymentDTO paymentInfo, ArrayList<Item> rec, double totalVat){
-        this.amountPaid = paymentInfo.getTotalPaymentByCostumer(); //Ändrade amountPayed --> amountPaid
+    /**
+     * Receipt constructor creates new instances representing the Receipt.
+     * Receives information from objects that gets stored in the attributes for the class
+     * @param paymentInfo represents the total payment done by customer and the change the customer gets back.
+     * @param listWithAllScannedItems represents a new instance with all scanned items for the purchase.
+     * @param totalVat represents a new instance with the total vat for the hole purchase. */
+
+    public ReceiptDTO(PaymentDTO paymentInfo, ArrayList<Item> listWithAllScannedItems, double totalVat){
+        this.amountPaid = paymentInfo.getTotalPaymentByCostumer();
         this.changeBack = paymentInfo.getChange();
-        this.recordsOfItems = new ArrayList<>(rec);
+        this.recordsOfItems = new ArrayList<>(listWithAllScannedItems);
         this.totalAmountOfSaleIncVAT = paymentInfo.getRunningTotal();
         this.totalVat = totalVat;
         this.localDateTime = java.time.LocalDateTime.now();
