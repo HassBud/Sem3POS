@@ -1,5 +1,8 @@
 package se.kth.iv1350.sempos.model;
 
+/**
+ * Represents the information about the payment
+ */
 public class PaymentDTO {
 
     private double totalPaymentByCustomer;

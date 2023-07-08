@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 
 /* One sale made in system */
+
+/**
+ * Represents a sale made
+ */
 public class Sale {
     private LocalDateTime saleTime;  //Ta bort?
     private ReceiptDTO receiptDTO;
@@ -18,6 +22,10 @@ public class Sale {
 
 
     /* Creates new instance and saves time of sale */
+
+    /**
+     * Creates a new sale instance
+     */
     public Sale() {
         //should have a list
         listItem = new ArrayList<Item>();
@@ -29,6 +37,13 @@ public class Sale {
 
 
     /* Adds an Item to the list */
+
+    /**
+     *  Adds an item to <code>listItem</code>
+     * @param scanItem The <code>ItemDTO</code> item's ID
+     * @param quantity How many <code>int</code> of the item is being scanned
+     * @return What item is being scanned, how many, the total price including VAT and the total VAT separate.
+     */
     public LatestRegisteredItemDTO addItem(ItemDTO scanItem, int quantity) {
         boolean itemFound = false;
 
@@ -55,6 +70,12 @@ public class Sale {
     }
 
     /*addPayment adds the amount the customer pays (paymentByCustomer) and sends the information to the cashRegister */
+
+    /**
+     * The <code>PaymentDTO</code> addPayment method adds the amount the customer pays to the cash register
+     * @param paymentByCostumer How much money the customer pays
+     * @return How much money in the cash register after the transaction
+     */
     public PaymentDTO addPayment(double paymentByCostumer){
 
         this.cashRegister = new CashRegister();
@@ -63,14 +84,28 @@ public class Sale {
     }
 
     /*The information about the purchase the customer made gets stored in receiptDTO */
+
+    /**
+     * The <code>ReceiptDTO</code> addReceipt method adds the transaction information to a receipt
+     * @return What was sold, when it was sold, and for how much
+     */
     public ReceiptDTO addReceipt(){
         PaymentDTO saleInfo = cashRegister.getPaymentInfo();
 
         this.receiptDTO = new ReceiptDTO(saleInfo,listItem,totalVat);
-
+        //Varför totalVat och inte totalPriceIncVat?
         return this.receiptDTO;
     }
 
+    /**
+     * The getter for quantityOfEachItem attribute
+     * @return How many of each item is being sold
+     */
+
+    /**
+     * The getter for quantityOfEachItem
+     * @return The quantity of the item's being sold
+     */
     //Står används ej. Ta bort?
     public int getQuantityOfEachItem() {
         return quantityOfEachItem;

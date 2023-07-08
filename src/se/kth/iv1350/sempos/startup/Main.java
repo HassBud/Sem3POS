@@ -9,7 +9,15 @@ import se.kth.iv1350.sempos.view.View;
 * Starts the application. Contains the main method.
 * @param args The application does not take any command line parameters.
 * */
+
+/**
+ * Represents the main method. Starts the application
+ */
 public class Main {
+    /**
+     * The <code>void</code> main method starts the application
+     * @param args
+     */
     public static void main(String[] args){
         Controller contr = new Controller(new InventorySystem(), new Sale()); // ??? är det korrekt att ha new InventorySystem() och new Sale() i controllern??
         View view = new View(contr); //Ändrar jag till controller ist för contr försvinner typo. Chatgpt blir glad också
