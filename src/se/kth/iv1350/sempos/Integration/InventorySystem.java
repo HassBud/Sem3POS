@@ -20,9 +20,11 @@ public class InventorySystem {
      * @param identifierOfItem identifier for a specifik item.
      * @return The information of the specific item.
      *  */
-    public ItemDTO getItemInformation(int identifierOfItem) {
+    public ItemDTO getItemInformation(int identifierOfItem) throws InvalidIdentifierOfItemException, DatabaseFailureException{
         if (identifierOfItem == 1)
             return new ItemDTO(1, "Äpple", 5, 0.06);
+            //throw new DatabaseFailureException();
+            //istället för att returnera Äpplet så skulle denna hårdkoda att det blir fel med kontakt till servern
         else if (identifierOfItem == 2)
             return new ItemDTO(2, "Bok", 25, 0.25);
         else if (identifierOfItem == 3)

@@ -1,4 +1,5 @@
 package se.kth.iv1350.sempos.view;
+import se.kth.iv1350.sempos.Integration.DatabaseFailureException;
 import se.kth.iv1350.sempos.controller.Controller;
 import se.kth.iv1350.sempos.model.*;
 
@@ -23,7 +24,7 @@ public class View {
     /**
      * The <code>void</code> runFakeExecution method performs a fake sale, by calling all system operations in the controller
      */
-    public void runFakeExecution() {
+    public void runFakeExecution() throws InvalidIdentifierOfItemException, DatabaseFailureException{
         contr.startSale();
         System.out.println("A new sale has been started.");
 
@@ -44,7 +45,7 @@ public class View {
      * @param itemIdentifier The unique ID of the item
      * @param quantity How many of the item that's being sold
      */
-    private void scanItem(int itemIdentifier, int quantity){
+    private void scanItem(int itemIdentifier, int quantity) throws InvalidIdentifierOfItemException, DatabaseFailureException {
         LatestRegisteredItemDTO saleInfo = contr.registerItem(itemIdentifier, quantity);
         System.out.println("A new item has been registered: ");
         System.out.println("Item: " + saleInfo.getItemDescription());
