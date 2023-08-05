@@ -44,20 +44,11 @@ public class Sale {
      * @param quantity How many <code>int</code> of the item is being scanned
      * @return What item is being scanned, how many, the total price including VAT and the total VAT separate.
      */
-    public LatestRegisteredItemDTO addItem(ItemDTO scanItem, int quantity) throws InvalidIdentifierOfItemException {
+    public LatestRegisteredItemDTO addItem(ItemDTO scanItem, int quantity)  {
         boolean itemFound = false;
-
-        try{
-
-        } catch (InvalidIdentifierOfItemException){
-            throw new InvalidIdentifierOfItemException()
-        }
-        /*if (scanItem.equals(0)) {
-            throw new InvalidIdentifierOfItemException();
-        }*/
-
         for (Item oneItem : listItem) {
-            if (oneItem.getItemDTO().getIdentifierOfItem()==(scanItem.getIdentifierOfItem())) {
+
+            if (oneItem.getItemDTO().getIdentifierOfItem()== scanItem.getIdentifierOfItem()) {
                 oneItem.incrementNumberOfItems(quantity);
                 itemFound = true;
                 break;

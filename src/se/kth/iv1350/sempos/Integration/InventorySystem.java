@@ -20,7 +20,7 @@ public class InventorySystem {
      * @param identifierOfItem identifier for a specifik item.
      * @return The information of the specific item.
      *  */
-    public ItemDTO getItemInformation(int identifierOfItem) throws InvalidIdentifierOfItemException, DatabaseFailureException{
+    public ItemDTO getItemInformation(int identifierOfItem) throws InvalidIdentifierOfItemException{
         if (identifierOfItem == 1)
             return new ItemDTO(1, "Äpple", 5, 0.06);
             //throw new DatabaseFailureException();
@@ -30,7 +30,7 @@ public class InventorySystem {
         else if (identifierOfItem == 3)
             return new ItemDTO(3, "Mjölk", 10, 0.12);
         else
-            return null;
+            throw new InvalidIdentifierOfItemException("Invalid Item-ID for ID: " + identifierOfItem);
     }
 
     /** External system receives a receipt with information needed for external system InventorySystem.

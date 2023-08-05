@@ -30,7 +30,7 @@ public class ItemDTO {
      * @param priceOfItem The price of the item
      * @param vat The tax rate for the item
      */
-    public ItemDTO(int identifierOfItem, String nameOfItem, double priceOfItem, double vat) throws InvalidIdentifierOfItemException{
+    public ItemDTO(int identifierOfItem, String nameOfItem, double priceOfItem, double vat){
         this.identifierOfItem = identifierOfItem;
         this.nameOfItem = nameOfItem;
         this.priceOfItem = priceOfItem;
@@ -38,9 +38,6 @@ public class ItemDTO {
         this.vatPriceForItem = priceOfItem * vat;
         this.priceOfItemIncVat = priceOfItem + this.vatPriceForItem;
 
-        if (identifierOfItem <= 0 || identifierOfItem > 3) {
-            throw new InvalidIdentifierOfItemException();
-        }
 
 
     }
