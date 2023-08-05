@@ -20,7 +20,7 @@ public class InventorySystem {
      * @param identifierOfItem identifier for a specifik item.
      * @return The information of the specific item.
      *  */
-    public ItemDTO getItemInformation(int identifierOfItem) throws InvalidIdentifierOfItemException{
+    public ItemDTO getItemInformation(int identifierOfItem) throws InvalidIdentifierOfItemException, DatabaseFailureException {
         if (identifierOfItem == 1)
             return new ItemDTO(1, "Äpple", 5, 0.06);
             //throw new DatabaseFailureException();
@@ -29,7 +29,10 @@ public class InventorySystem {
             return new ItemDTO(2, "Bok", 25, 0.25);
         else if (identifierOfItem == 3)
             return new ItemDTO(3, "Mjölk", 10, 0.12);
-        else
+        else if (identifierOfItem == 4) {
+            throw new DatabaseFailureException("Error can not connect to server. Item does not exists." + identifierOfItem);
+
+        } else
             throw new InvalidIdentifierOfItemException("Invalid Item-ID for ID: " + identifierOfItem);
     }
 

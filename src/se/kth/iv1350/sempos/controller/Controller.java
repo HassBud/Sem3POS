@@ -1,6 +1,7 @@
 package se.kth.iv1350.sempos.controller;
 import se.kth.iv1350.sempos.Integration.AccountingSystem;
 //import se.kth.iv1350.sempos.Integration.DatabaseFailureException;
+import se.kth.iv1350.sempos.Integration.DatabaseFailureException;
 import se.kth.iv1350.sempos.Integration.InventorySystem;
 import se.kth.iv1350.sempos.model.*;
 
@@ -43,7 +44,7 @@ public class Controller {
      * @param quantity The quantity of the item being purchased
      * @return Information about the item and how many is being purchased is stored
      */
-    public LatestRegisteredItemDTO registerItem(int identifierOfItem, int quantity) throws InvalidIdentifierOfItemException {
+    public LatestRegisteredItemDTO registerItem(int identifierOfItem, int quantity) throws InvalidIdentifierOfItemException, DatabaseFailureException {
         ItemDTO itemInfo = inventory.getItemInformation(identifierOfItem);
         LatestRegisteredItemDTO registeredSaleInfo = sale.addItem(itemInfo, quantity);
 
