@@ -17,4 +17,13 @@ public class LogFile {
     public void logMessage(String message){
         printStream.println(message);
     }
+
+    public void loggedException(Exception exception){
+        StringBuilder messageThatGetsLogged = new StringBuilder();
+        messageThatGetsLogged.append(", The thrown Exception: ");
+        messageThatGetsLogged.append(exception.getMessage());
+        printStream.println(messageThatGetsLogged);
+        exception.printStackTrace(printStream);
+        printStream.println("\n");
+    }
 }
