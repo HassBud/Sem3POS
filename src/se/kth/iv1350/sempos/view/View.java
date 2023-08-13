@@ -2,6 +2,7 @@ package se.kth.iv1350.sempos.view;
 //import se.kth.iv1350.sempos.Integration.DatabaseFailureException;
 import se.kth.iv1350.sempos.Integration.DatabaseFailureException;
 import se.kth.iv1350.sempos.controller.Controller;
+import se.kth.iv1350.sempos.logFiles.LogFile;
 import se.kth.iv1350.sempos.model.*;
 
 import java.util.ArrayList;
@@ -14,12 +15,14 @@ import java.util.ArrayList;
 
 public class View {
     private Controller contr;
+    private LogFile logFile;
 
     /** Creates a new instance
     * @param contr The controller to use for all calls to other layers.
      */
     public View(Controller contr){
         this.contr = contr;
+        this.logFile = new LogFile();
     }
 
     /**
