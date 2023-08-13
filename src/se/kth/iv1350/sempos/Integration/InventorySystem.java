@@ -14,6 +14,7 @@ public class InventorySystem {
     public InventorySystem() {
     }
 
+
     /**
      *  Hard coded information about each item available in the store. Checks if identifierOfItem
      *  is equal to a specific number. Re

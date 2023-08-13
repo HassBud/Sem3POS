@@ -3,6 +3,7 @@ package se.kth.iv1350.sempos.Integration;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import se.kth.iv1350.sempos.model.InvalidIdentifierOfItemException;
 import se.kth.iv1350.sempos.model.ItemDTO;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -20,7 +21,7 @@ class InventorySystemTest {
         testItemID = null;
     }
     @Test
-    void getItemInformation() {
+    void getItemInformation() throws InvalidIdentifierOfItemException, DatabaseFailureException {
         ItemDTO firstItem = testItemID.getItemInformation(1);
         assertEquals(1,firstItem.getIdentifierOfItem(), "Item ID does not match");
         ItemDTO secondItem = testItemID.getItemInformation(2);
