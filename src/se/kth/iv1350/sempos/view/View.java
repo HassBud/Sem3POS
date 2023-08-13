@@ -41,6 +41,7 @@ public class View {
            receipt();
        }
        catch (Exception exception){
+           logFile.loggedException(exception);
            System.out.println(exception.getMessage());
        }
 
