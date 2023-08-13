@@ -26,5 +26,6 @@ public class LogFile {
         exception.printStackTrace(printStream);
         printStream.println("\n");
 
+
     }
 }
