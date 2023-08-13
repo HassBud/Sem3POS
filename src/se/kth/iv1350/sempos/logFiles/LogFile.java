@@ -10,7 +10,7 @@ public class LogFile {
             printStream = new PrintWriter(new FileWriter("printedLog.txt"), true);
         } catch (IOException e) {
             System.out.println("Not possible to Log.");
-            ioe.printStackTrace();
+            e.printStackTrace();
         }
     }
 }

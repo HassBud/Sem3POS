@@ -26,15 +26,20 @@ public class View {
      * The <code>void</code> runFakeExecution method performs a fake sale, by calling all system operations in the controller
      */
     public void runFakeExecution() throws InvalidIdentifierOfItemException, DatabaseFailureException {
-        contr.startSale();
-        System.out.println("A new sale has been started.");
+       try {
+           contr.startSale();
+           System.out.println("A new sale has been started.");
 
-        scanItem(2,1);
-        scanItem(4,2);
+           scanItem(2, 1);
+           scanItem(4, 2);
 
-        payment(200);
+           payment(200);
 
-        receipt();
+           receipt();
+       }
+       catch (Exception exception){
+           System.out.println(exception.getMessage());
+       }
 
     }
 
