@@ -25,7 +25,5 @@ public class LogFile {
         printStream.println(messageThatGetsLogged);
         exception.printStackTrace(printStream);
         printStream.println("\n");
-
-
     }
 }
