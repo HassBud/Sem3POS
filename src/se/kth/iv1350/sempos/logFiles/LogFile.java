@@ -13,4 +13,8 @@ public class LogFile {
             e.printStackTrace();
         }
     }
+
+    public void logMessage(String message){
+        printStream.println(message);
+    }
 }
