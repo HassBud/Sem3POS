@@ -68,9 +68,9 @@ public class View {
            System.out.println("Quantity: " + saleInfo.getNumberOfItems());
            System.out.println();
        }
-       catch (InvalidIdentifierOfItemException | DatabaseFailureException invalidIdentifierOfItem) {
-           logFile.loggedException(invalidIdentifierOfItem);
-           System.out.println(invalidIdentifierOfItem.getMessage());
+       catch (InvalidIdentifierOfItemException | DatabaseFailureException exception) {
+           logFile.loggedException(exception);
+           System.out.println(exception.getMessage());
        }
     }
 
