@@ -68,13 +68,15 @@ public class View {
            System.out.println("Quantity: " + saleInfo.getNumberOfItems());
            System.out.println();
        }
-       catch (InvalidIdentifierOfItemException | DatabaseFailureException exception) {
+       catch (InvalidIdentifierOfItemException exception) {
+           System.out.println(exception.getMessage());
+       }
+       catch (DatabaseFailureException exception) {
            logFile.loggedException(exception);
            System.out.println(exception.getMessage());
        }
     }
-
-    /*How much the customer gives as payment. Set to 200 by default.  */
+    /*H}                                                                                        ow much the customer gives as payment. Set to 200 by default.  */
 
     /**
      * The <code>void</code> payment method represents how much the customer gives as payment and how much change they should receive
