@@ -57,7 +57,7 @@ public class View {
      * @param itemIdentifier The unique ID of the item
      * @param quantity How many of the item that's being sold
      */
-    private void scanItem(int itemIdentifier, int quantity) throws DatabaseFailureException {
+    private void scanItem(int itemIdentifier, int quantity) {
        try {
            LatestRegisteredItemDTO saleInfo = contr.registerItem(itemIdentifier, quantity);
 
@@ -68,7 +68,7 @@ public class View {
            System.out.println("Quantity: " + saleInfo.getNumberOfItems());
            System.out.println();
        }
-       catch (InvalidIdentifierOfItemException invalidIdentifierOfItem) {
+       catch (InvalidIdentifierOfItemException | DatabaseFailureException invalidIdentifierOfItem) {
            logFile.loggedException(invalidIdentifierOfItem);
            System.out.println(invalidIdentifierOfItem.getMessage());
        }
