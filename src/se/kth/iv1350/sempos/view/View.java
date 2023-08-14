@@ -32,7 +32,7 @@ public class View {
 
        try {
            contr.startSale();
-           System.out.println("A new sale has been started.");
+           System.out.println("A new sale has been started. \n");
            scanItem(5,1);
            scanItem(2, 1);
            scanItem(4, 2);

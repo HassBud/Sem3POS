@@ -34,7 +34,7 @@ public class InventorySystem {
             throw new DatabaseFailureException("Error can not connect to server. Item-ID " + 4 + " does not exists." );
 
         } else
-            throw new InvalidIdentifierOfItemException("Invalid Item-ID for ID: " + identifierOfItem);
+            throw new InvalidIdentifierOfItemException("Invalid Item-ID for ID: " + identifierOfItem + "\n");
     }
 
     /** External system receives a receipt with information needed for external system InventorySystem.

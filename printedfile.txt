@@ -1,5 +1,7 @@
 The thrown Exception: Invalid Item-ID for ID: 5
+
 se.kth.iv1350.sempos.model.InvalidIdentifierOfItemException: Invalid Item-ID for ID: 5
+
 	at se.kth.iv1350.sempos.Integration.InventorySystem.getItemInformation(InventorySystem.java:37)
 	at se.kth.iv1350.sempos.controller.Controller.registerItem(Controller.java:48)
 	at se.kth.iv1350.sempos.view.View.scanItem(View.java:62)
