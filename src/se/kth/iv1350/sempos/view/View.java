@@ -29,12 +29,14 @@ public class View {
      * The <code>void</code> runFakeExecution method performs a fake sale, by calling all system operations in the controller
      */
     public void runFakeExecution(){
+
        try {
            contr.startSale();
            System.out.println("A new sale has been started.");
-
+           scanItem(5,1);
            scanItem(2, 1);
            scanItem(4, 2);
+
 
            payment(200);
 
@@ -55,14 +57,21 @@ public class View {
      * @param itemIdentifier The unique ID of the item
      * @param quantity How many of the item that's being sold
      */
-    private void scanItem(int itemIdentifier, int quantity) throws InvalidIdentifierOfItemException, DatabaseFailureException {
-        LatestRegisteredItemDTO saleInfo = contr.registerItem(itemIdentifier, quantity);
-        System.out.println("A new item has been registered: ");
-        System.out.println("Item: " + saleInfo.getItemDescription());
-        System.out.println("Price inc. vat: " + saleInfo.getItemPriceIncVat());
-        System.out.println("Total Price: " + String.format("%.2f",saleInfo.getRunningTotalIncVat()));
-        System.out.println("Quantity: " + saleInfo.getNumberOfItems());
-        System.out.println();
+    private void scanItem(int itemIdentifier, int quantity) throws DatabaseFailureException {
+       try {
+           LatestRegisteredItemDTO saleInfo = contr.registerItem(itemIdentifier, quantity);
+
+           System.out.println("A new item has been registered: ");
+           System.out.println("Item: " + saleInfo.getItemDescription());
+           System.out.println("Price inc. vat: " + saleInfo.getItemPriceIncVat());
+           System.out.println("Total Price: " + String.format("%.2f", saleInfo.getRunningTotalIncVat()));
+           System.out.println("Quantity: " + saleInfo.getNumberOfItems());
+           System.out.println();
+       }
+       catch (InvalidIdentifierOfItemException invalidIdentifierOfItem) {
+           logFile.loggedException(invalidIdentifierOfItem);
+           System.out.println(invalidIdentifierOfItem.getMessage());
+       }
     }
 
     /*How much the customer gives as payment. Set to 200 by default.  */
