@@ -5,6 +5,7 @@ import se.kth.iv1350.sempos.model.PaymentDTO;
 
 public class TotalRevenueView implements Observer {
 
+
     @Override
     public void displayRevenue(PaymentDTO totalRevenue) {
 
