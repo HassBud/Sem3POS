@@ -21,7 +21,7 @@ public class Main {
      * The <code>void</code> main method starts the application
      * @param args
      */
-    public static void main(String[] args) throws InvalidIdentifierOfItemException, DatabaseFailureException {
+    public static void main(String[] args) throws Exception {
         Controller contr = new Controller(new InventorySystem(), new Sale()); // ??? är det korrekt att ha new InventorySystem() och new Sale() i controllern??
         View view = new View(contr); //Ändrar jag till controller ist för contr försvinner typo. Chatgpt blir glad också
         view.runFakeExecution();

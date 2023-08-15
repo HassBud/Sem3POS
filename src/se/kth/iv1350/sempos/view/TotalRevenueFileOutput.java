@@ -7,15 +7,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class TotalRevenueFileOutput implements Observer {
+public class TotalRevenueFileOutput extends Throwable implements Observer {
 
 
-
-    private double totalRev;
     private PrintWriter printWriter;
 
-    public TotalRevenueFileOutput(double totalRev){
-        this.totalRev = totalRev;
+    public TotalRevenueFileOutput(){
         try {
             printWriter = new PrintWriter(new FileWriter("printedTotalRevenue.txt", true));
         } catch (IOException exceptionRevenue) {
@@ -24,13 +21,18 @@ public class TotalRevenueFileOutput implements Observer {
         }
     }
 
-    @Override
-    public void displayRevenue(PaymentDTO totalRevenue) {
-        totalRevenue(totalRevenue);
+     @Override
+    public void displayRevenue(PaymentDTO saleRevenue) {
+        StringBuilder revenueThatGetsLogged = new StringBuilder();
+        revenueThatGetsLogged.append("The revenue for all sales : ");
+        revenueThatGetsLogged.append(saleRevenue.getTotalPaymentByCostumer());
+        printWriter.println(revenueThatGetsLogged);
+        printWriter.println("\n");
+
     }
 
-    public void totalRevenue(PaymentDTO totalRevenue){
-        this.totalRev = totalRevenue.getTotalPaymentByCostumer();
-    }
+
+
+
 
 }
