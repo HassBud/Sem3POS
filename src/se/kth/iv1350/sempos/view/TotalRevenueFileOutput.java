@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-public class TotalRevenueFileOutput extends Throwable implements Observer {
+public class TotalRevenueFileOutput {
 
 
     private PrintWriter printWriter;
@@ -21,8 +21,13 @@ public class TotalRevenueFileOutput extends Throwable implements Observer {
         }
     }
 
-     @Override
+    // @Override
     public void displayRevenue(PaymentDTO saleRevenue) {
+
+
+
+
+
         StringBuilder revenueThatGetsLogged = new StringBuilder();
         revenueThatGetsLogged.append("The revenue for all sales : ");
         revenueThatGetsLogged.append(saleRevenue.getTotalPaymentByCostumer());
