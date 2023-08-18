@@ -1,6 +1,7 @@
 package se.kth.iv1350.sempos.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 
 /* One sale made in system */
@@ -16,6 +17,7 @@ public class Sale {
     private double runningTotalIncVat;
     private double totalVat;
     private int quantityOfEachItem;
+    private List<Observer> observers = new ArrayList<>();
 
 
 
@@ -97,11 +99,14 @@ public class Sale {
         //Varför totalVat och inte totalPriceIncVat?
         return this.receiptDTO;
     }
-
-    /**
-     * The getter for quantityOfEachItem attribute
-     * @return How many of each item is being sold
-     */
+    public void addRevenue(Observer saleObs){
+        observers.add(saleObs);
+    }
+    public void callObservers(){
+        for(Observer saleObserver : observers){
+            
+        }
+    }
 
     /**
      * The getter for quantityOfEachItem

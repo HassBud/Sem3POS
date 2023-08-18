@@ -31,7 +31,7 @@ public class InventorySystem {
         else if (identifierOfItem == 3)
             return new ItemDTO(3, "Mjölk", 10, 0.12);
         else if (identifierOfItem == 4) {
-            throw new DatabaseFailureException("Error can not connect to server. Item-ID " + 4 + " does not exists." );
+            throw new DatabaseFailureException("Error can not connect to server. ");
 
         } else
             throw new InvalidIdentifierOfItemException("Invalid Item-ID for ID: " + identifierOfItem + "\n");

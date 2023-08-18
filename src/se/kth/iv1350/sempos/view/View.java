@@ -4,6 +4,7 @@ import se.kth.iv1350.sempos.Integration.DatabaseFailureException;
 import se.kth.iv1350.sempos.controller.Controller;
 import se.kth.iv1350.sempos.logFiles.LogFile;
 import se.kth.iv1350.sempos.model.*;
+import se.kth.iv1350.sempos.startup.TotalRevenueView;
 
 import java.util.ArrayList;
 
@@ -13,21 +14,23 @@ import java.util.ArrayList;
  * int the controller
  */
 
-public class View {
+public class View implements Observer {
     private Controller contr;
     private LogFile logFile;
-    private TotalRevenueFileOutput totalRevenueFileOutput;
-    private TotalRevenueView totalRevenueView;
-    private PaymentDTO rev;
+
+
+
+
 
     /** Creates a new instance
     * @param contr The controller to use for all calls to other layers.
      */
-    public View(Controller contr) throws Exception {
+    public View(Controller contr)  throws Exception {
         this.contr = contr;
         this.logFile = new LogFile();
-        this.totalRevenueView = new TotalRevenueView();
-        this.totalRevenueFileOutput = new TotalRevenueFileOutput();
+        contr.addRevenue(new TotalRevenueView());
+
+
 
     }
 
@@ -47,6 +50,8 @@ public class View {
            payment(200);
 
            receipt();
+
+
        }
        catch (Exception exception){
            logFile.loggedException(exception);
@@ -125,5 +130,18 @@ public class View {
     }
 
 
+    @Override
+    public void displayRevenue(PaymentDTO saleRevenue) {
 
+
+    }
+
+
+
+
+
+
+
+
+    
 }

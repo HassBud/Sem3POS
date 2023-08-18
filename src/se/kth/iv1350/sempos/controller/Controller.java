@@ -18,6 +18,7 @@ public class Controller {
     private InventorySystem inventory;
     private AccountingSystem accountingSystem;
     private ReceiptDTO receiptDTO;
+    private ArrayList<Observer> observers = new ArrayList<>();
 
 
 
@@ -70,7 +71,9 @@ public class Controller {
         return sale.addReceipt();
     }
 
-
+    public void addRevenue(Observer revenue){
+        observers.add(revenue);
+    }
     }
 
 

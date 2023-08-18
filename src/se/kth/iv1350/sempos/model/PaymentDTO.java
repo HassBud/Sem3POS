@@ -9,6 +9,7 @@ public class PaymentDTO {
     private double change;
     private double runningTotal;
 
+
     /**The constructor PaymentDTO takes the parameters totalPaymentByCustomer, runningTotal, and change.
      * The information gets stored in the variables with the same names.
      * @param totalPaymentByCustomer the payment by the customer represented by the instance.

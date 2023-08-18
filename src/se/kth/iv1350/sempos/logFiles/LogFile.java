@@ -8,9 +8,9 @@ public class LogFile {
     public LogFile(){
         try {
             printStream = new PrintWriter(new FileWriter("printedfile.txt"), true);
-        } catch (IOException e) {
-            System.out.println("Not possible to Log.");
-            e.printStackTrace();
+        } catch (IOException logException) {
+            System.out.println("Not possible to Log to File.");
+            logException.printStackTrace();
         }
     }
 

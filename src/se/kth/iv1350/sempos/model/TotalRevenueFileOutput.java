@@ -1,4 +1,4 @@
-package se.kth.iv1350.sempos.view;
+package se.kth.iv1350.sempos.model;
 
 import se.kth.iv1350.sempos.model.Observer;
 import se.kth.iv1350.sempos.model.PaymentDTO;
@@ -6,11 +6,15 @@ import se.kth.iv1350.sempos.model.PaymentDTO;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TotalRevenueFileOutput {
 
 
     private PrintWriter printWriter;
+    private PaymentDTO saleRevenue;
+    private List<Observer> saleObservers = new ArrayList<>();
 
     public TotalRevenueFileOutput(){
         try {
@@ -21,12 +25,14 @@ public class TotalRevenueFileOutput {
         }
     }
 
-    // @Override
-    public void displayRevenue(PaymentDTO saleRevenue) {
 
 
+    private void calculatedRevenue(){
+
+    }
 
 
+    public void listedRevenue(PaymentDTO saleRevenue) {
 
         StringBuilder revenueThatGetsLogged = new StringBuilder();
         revenueThatGetsLogged.append("The revenue for all sales : ");
@@ -35,9 +41,6 @@ public class TotalRevenueFileOutput {
         printWriter.println("\n");
 
     }
-
-
-
 
 
 }
