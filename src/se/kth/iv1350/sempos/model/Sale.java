@@ -112,10 +112,6 @@ public class Sale {
         }
 
     }
-    public void copyListWithObservers
-            (List<SaleObserver> saleObservers){
-        saleObserverArrayList.addAll(saleObservers);
-    }
 
     /**
      * The getter for quantityOfEachItem
