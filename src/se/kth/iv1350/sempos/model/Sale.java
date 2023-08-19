@@ -83,10 +83,10 @@ public class Sale {
     public PaymentDTO addPayment(double paymentByCostumer){
 
         this.cashRegister = new CashRegister();
-        cashRegister.pay(this.runningTotalIncVat, paymentByCostumer);
+        totalPayment = cashRegister.pay(this.runningTotalIncVat, paymentByCostumer);
         callObservers();
 
-        return cashRegister.getPaymentInfo();
+        return this.totalPayment;
 
 
     }
