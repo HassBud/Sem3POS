@@ -18,7 +18,7 @@ public class Sale {
     private double runningTotalIncVat;
     private double totalVat;
     private int quantityOfEachItem;
-    private List<SaleObserver> saleObserverArrayList = new ArrayList<>();
+    private List<SaleObserver> saleObserverArrayList;
 
 
 
@@ -29,10 +29,10 @@ public class Sale {
     /**
      * Creates a new sale instance
      */
-    public Sale() {
+    public Sale(ArrayList observers) {
         //should have a list
         listItem = new ArrayList<Item>();
-
+        this.saleObserverArrayList = observers;
         runningTotalIncVat = 0;
         totalVat = 0;
         quantityOfEachItem = 0;

@@ -18,7 +18,7 @@ public class Controller {
     private InventorySystem inventory;
     private AccountingSystem accountingSystem;
     private ReceiptDTO receiptDTO;
-    private List<SaleObserver> saleObserversList = new ArrayList<>();
+    private ArrayList<SaleObserver> saleObserversList = new ArrayList<>();
 
 
 
@@ -26,8 +26,8 @@ public class Controller {
      *  Starts a new sale. This method must be called first.
      */
     public void startSale() {
-        sale = new Sale();
-        sale.copyListWithObservers(saleObserversList);
+        sale = new Sale(saleObserversList);
+
 
     }
 
