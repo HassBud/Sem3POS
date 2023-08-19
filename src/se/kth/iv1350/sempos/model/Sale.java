@@ -18,7 +18,7 @@ public class Sale {
     private double runningTotalIncVat;
     private double totalVat;
     private int quantityOfEachItem;
-    private List<SaleObserver> saleSaleObservers = new ArrayList<>();
+    private List<SaleObserver> saleObserverArrayList = new ArrayList<>();
 
 
 
@@ -85,7 +85,7 @@ public class Sale {
         this.cashRegister = new CashRegister();
         cashRegister.pay(this.runningTotalIncVat, paymentByCostumer);
         callObservers();
-        saleObservers(saleSaleObservers);
+        copyListWithObserversToSale(saleObserverArrayList);
         return cashRegister.getPaymentInfo();
 
 
@@ -107,13 +107,13 @@ public class Sale {
 
 
     public void callObservers(){
-        for(SaleObserver saleObserver : saleSaleObservers){
+        for(SaleObserver saleObserver : saleObserverArrayList){
             saleObserver.displayRevenue(totalPayment);
         }
 
     }
-    public void saleObservers(List<SaleObserver> saleObservers){
-        saleSaleObservers.addAll(saleObservers);
+    public void copyListWithObserversToSale(List<SaleObserver> saleObservers){
+        saleObserverArrayList.addAll(saleObservers);
     }
 
     /**
