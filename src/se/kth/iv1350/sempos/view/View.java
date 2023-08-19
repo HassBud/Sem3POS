@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * int the controller
  */
 
-public class View implements Observer {
+public class View{
     private Controller contr;
     private LogFile logFile;
 
@@ -28,8 +28,7 @@ public class View implements Observer {
     public View(Controller contr)  throws Exception {
         this.contr = contr;
         this.logFile = new LogFile();
-        contr.addRevenue(new TotalRevenueView());
-
+        contr.addToObserverList(new TotalRevenueView());
 
 
     }
@@ -50,7 +49,6 @@ public class View implements Observer {
            payment(200);
 
            receipt();
-
 
        }
        catch (Exception exception){
@@ -128,20 +126,6 @@ public class View implements Observer {
         System.out.println("Change:                             " + String.format("%.2f", receiptDTOInfo.getChangeBack()));
 
     }
-
-
-    @Override
-    public void displayRevenue(PaymentDTO saleRevenue) {
-
-
-    }
-
-
-
-
-
-
-
 
     
 }

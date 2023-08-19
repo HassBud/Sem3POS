@@ -1,9 +1,9 @@
 The thrown Exception: Error can not connect to server. 
 se.kth.iv1350.sempos.Integration.DatabaseFailureException: Error can not connect to server. 
 	at se.kth.iv1350.sempos.Integration.InventorySystem.getItemInformation(InventorySystem.java:34)
-	at se.kth.iv1350.sempos.controller.Controller.registerItem(Controller.java:49)
-	at se.kth.iv1350.sempos.view.View.scanItem(View.java:73)
-	at se.kth.iv1350.sempos.view.View.runFakeExecution(View.java:47)
+	at se.kth.iv1350.sempos.controller.Controller.registerItem(Controller.java:51)
+	at se.kth.iv1350.sempos.view.View.scanItem(View.java:71)
+	at se.kth.iv1350.sempos.view.View.runFakeExecution(View.java:46)
 	at se.kth.iv1350.sempos.startup.Main.main(Main.java:27)
 
 

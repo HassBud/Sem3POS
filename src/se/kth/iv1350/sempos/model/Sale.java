@@ -17,7 +17,7 @@ public class Sale {
     private double runningTotalIncVat;
     private double totalVat;
     private int quantityOfEachItem;
-    private List<Observer> observers = new ArrayList<>();
+    private List<Observer> saleObservers = new ArrayList<>();
 
 
 
@@ -83,7 +83,9 @@ public class Sale {
 
         this.cashRegister = new CashRegister();
         cashRegister.pay(this.runningTotalIncVat, paymentByCostumer);
+        callObservers();
         return cashRegister.getPaymentInfo();
+
     }
 
     /*The information about the purchase the customer made gets stored in receiptDTO */
@@ -99,13 +101,16 @@ public class Sale {
         //Varför totalVat och inte totalPriceIncVat?
         return this.receiptDTO;
     }
-    public void addRevenue(Observer saleObs){
-        observers.add(saleObs);
-    }
+
+
     public void callObservers(){
-        for(Observer saleObserver : observers){
-            
+        for(Observer saleObserver : saleObservers){
+            saleObserver.displayRevenue(addPayment(receiptDTO.getAmountPayed()));
         }
+
+    }
+    public void saleObservers(List<Observer> observers){
+        saleObservers.addAll(observers);
     }
 
     /**

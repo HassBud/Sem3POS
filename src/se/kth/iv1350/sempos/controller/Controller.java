@@ -18,7 +18,7 @@ public class Controller {
     private InventorySystem inventory;
     private AccountingSystem accountingSystem;
     private ReceiptDTO receiptDTO;
-    private ArrayList<Observer> observers = new ArrayList<>();
+    private ArrayList<Observer> saleObserversList = new ArrayList<>();
 
 
 
@@ -27,6 +27,7 @@ public class Controller {
      */
     public void startSale() {
         sale = new Sale();
+        sale.callObservers();
     }
 
 
@@ -38,6 +39,7 @@ public class Controller {
         this.sale = sale;
         this.accountingSystem = new AccountingSystem();
 
+
     }
 
     /** The <code>LatestRegisteredItemDTO</code> registerItem method fetches information about the item
@@ -48,6 +50,7 @@ public class Controller {
     public LatestRegisteredItemDTO registerItem(int identifierOfItem, int quantity) throws InvalidIdentifierOfItemException, DatabaseFailureException {
         ItemDTO itemInfo = inventory.getItemInformation(identifierOfItem);
         LatestRegisteredItemDTO registeredSaleInfo = sale.addItem(itemInfo, quantity);
+
 
         return registeredSaleInfo;
     }
@@ -71,9 +74,10 @@ public class Controller {
         return sale.addReceipt();
     }
 
-    public void addRevenue(Observer revenue){
-        observers.add(revenue);
+    public void addToObserverList(Observer ObserverList){
+        saleObserversList.add(ObserverList);
     }
+
     }
 
 
