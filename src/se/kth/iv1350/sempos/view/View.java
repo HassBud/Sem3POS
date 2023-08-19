@@ -4,7 +4,6 @@ import se.kth.iv1350.sempos.Integration.DatabaseFailureException;
 import se.kth.iv1350.sempos.controller.Controller;
 import se.kth.iv1350.sempos.logFiles.LogFile;
 import se.kth.iv1350.sempos.model.*;
-import se.kth.iv1350.sempos.startup.TotalRevenueView;
 
 import java.util.ArrayList;
 

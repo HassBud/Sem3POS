@@ -1,4 +1,4 @@
-package se.kth.iv1350.sempos.startup;
+package se.kth.iv1350.sempos.view;
 
 import se.kth.iv1350.sempos.model.PaymentDTO;
 import se.kth.iv1350.sempos.model.SaleObserver;
