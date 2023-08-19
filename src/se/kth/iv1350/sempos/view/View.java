@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class View{
     private Controller contr;
     private LogFile logFile;
+    private TotalRevenueView totalRevenueView;
 
 
 
@@ -49,6 +50,9 @@ public class View{
            payment(200);
 
            receipt();
+
+           System.out.println();
+
 
        }
        catch (Exception exception){
@@ -94,9 +98,11 @@ public class View{
     private void payment(double paymentByCostumer){
             System.out.println("Payment has been registered: ");
             PaymentDTO changeInfo = contr.pay(paymentByCostumer);
+
             System.out.println("Change back: " + String.format("%.2f", changeInfo.getChange()));
             System.out.println("Total amount: " + String.format("%.2f", changeInfo.getTotalPaymentByCostumer()));
             System.out.println();
+            System.out.println(); 
     }
 
     /*A list is created with the quantity of each item, the name of the items, the items' prices including VAT,

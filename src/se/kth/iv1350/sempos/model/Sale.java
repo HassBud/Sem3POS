@@ -12,12 +12,13 @@ import java.util.List;
 public class Sale {
     private LocalDateTime saleTime;  //Ta bort?
     private ReceiptDTO receiptDTO;
+    private PaymentDTO totalPayment;
     private ArrayList<Item> listItem;
     private CashRegister cashRegister;
     private double runningTotalIncVat;
     private double totalVat;
     private int quantityOfEachItem;
-    private List<Observer> saleObservers = new ArrayList<>();
+    private List<SaleObserver> saleSaleObservers = new ArrayList<>();
 
 
 
@@ -84,7 +85,9 @@ public class Sale {
         this.cashRegister = new CashRegister();
         cashRegister.pay(this.runningTotalIncVat, paymentByCostumer);
         callObservers();
+        saleObservers(saleSaleObservers);
         return cashRegister.getPaymentInfo();
+
 
     }
 
@@ -104,13 +107,13 @@ public class Sale {
 
 
     public void callObservers(){
-        for(Observer saleObserver : saleObservers){
-            saleObserver.displayRevenue(addPayment(receiptDTO.getAmountPayed()));
+        for(SaleObserver saleObserver : saleSaleObservers){
+            saleObserver.displayRevenue(totalPayment);
         }
 
     }
-    public void saleObservers(List<Observer> observers){
-        saleObservers.addAll(observers);
+    public void saleObservers(List<SaleObserver> saleObservers){
+        saleSaleObservers.addAll(saleObservers);
     }
 
     /**

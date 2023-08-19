@@ -1,8 +1,5 @@
 package se.kth.iv1350.sempos.model;
 
-import se.kth.iv1350.sempos.model.Observer;
-import se.kth.iv1350.sempos.model.PaymentDTO;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,7 +11,7 @@ public class TotalRevenueFileOutput {
 
     private PrintWriter printWriter;
     private PaymentDTO saleRevenue;
-    private List<Observer> saleObservers = new ArrayList<>();
+    private List<SaleObserver> saleSaleObservers = new ArrayList<>();
 
     public TotalRevenueFileOutput(){
         try {

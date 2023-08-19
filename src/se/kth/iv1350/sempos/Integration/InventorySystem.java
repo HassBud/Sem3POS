@@ -1,9 +1,6 @@
 package se.kth.iv1350.sempos.Integration;
 
-import org.junit.platform.engine.support.descriptor.FileSystemSource;
 import se.kth.iv1350.sempos.model.*;
-
-import java.util.ArrayList;
 
 /* Skriv här */
 public class InventorySystem {

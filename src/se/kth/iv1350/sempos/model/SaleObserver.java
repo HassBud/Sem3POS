@@ -1,6 +1,6 @@
 package se.kth.iv1350.sempos.model;
 
-public interface Observer {
+public interface SaleObserver {
 
     /**
      * Displays the revenue

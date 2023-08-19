@@ -6,7 +6,7 @@ import se.kth.iv1350.sempos.Integration.InventorySystem;
 import se.kth.iv1350.sempos.model.*;
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 /**
@@ -18,7 +18,7 @@ public class Controller {
     private InventorySystem inventory;
     private AccountingSystem accountingSystem;
     private ReceiptDTO receiptDTO;
-    private ArrayList<Observer> saleObserversList = new ArrayList<>();
+    private List<SaleObserver> saleObserversList = new ArrayList<>();
 
 
 
@@ -27,7 +27,8 @@ public class Controller {
      */
     public void startSale() {
         sale = new Sale();
-        sale.callObservers();
+        sale.saleObservers(saleObserversList);
+
     }
 
 
@@ -63,6 +64,7 @@ public class Controller {
         PaymentDTO paymentInfo = sale.addPayment(paymentByCostumer);
         inventory.externalSystemUpdateInventory(receiptDTO);
         accountingSystem.externalSystemUpdateAccounting(receiptDTO);
+        sale.callObservers();
         return paymentInfo;
     }
 
@@ -74,8 +76,8 @@ public class Controller {
         return sale.addReceipt();
     }
 
-    public void addToObserverList(Observer ObserverList){
-        saleObserversList.add(ObserverList);
+    public void addToObserverList(SaleObserver saleObserver){
+        saleObserversList.add(saleObserver);
     }
 
     }
