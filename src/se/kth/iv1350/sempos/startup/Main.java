@@ -26,6 +26,7 @@ public class Main {
         View view = new View(contr); //Ändrar jag till controller ist för contr försvinner typo. Chatgpt blir glad också
         view.runFakeExecution();
 
+
         System.out.println();
 
     }

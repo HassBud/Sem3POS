@@ -13,10 +13,11 @@ import java.util.List;
 import java.util.Map;
 
 public class TotalRevenueView implements SaleObserver {
-    private Map<String, Double> totalRevenueForAllSales = new HashMap<>();
-    private List<Double> revenueArrayList = new ArrayList<>();
+    private double totalRev;
 
-
+    public TotalRevenueView(){
+        totalRev = 0;
+    }
 
     @Override
     public void displayRevenue(PaymentDTO saleRevenue) {
@@ -26,15 +27,13 @@ public class TotalRevenueView implements SaleObserver {
     }
 
     public void calculateTotalRevenue(PaymentDTO saleRevenue){
-        double calculateRevenueForAllSales =+ saleRevenue.getTotalPaymentByCostumer();
-        revenueArrayList.add(calculateRevenueForAllSales); // Testar med ArrayList.
-        totalRevenueForAllSales.put("Total revenue: ", calculateRevenueForAllSales); // Testar med HashMap
-
+        totalRev += saleRevenue.getTotalPaymentByCostumer();
     }
 
     public void printTotalRevenue() {
-        System.out.println("This is the total Revenue for all the sales made: " + totalRevenueForAllSales);
-        System.out.println("This is the total Revenue for all the sales made: " + revenueArrayList);
+        System.out.println("   *** Total revenue for all sales ***");
+        System.out.println("            " + totalRev + ":-     ");
+        System.out.println("*** *** *** *** *** *** *** *** *** *** ***");
     }
 }
 

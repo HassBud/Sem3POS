@@ -42,7 +42,7 @@ public class View{
            contr.startSale();
            System.out.println("A new sale has been started. \n");
            scanItem(5,1);
-           scanItem(2, 1);
+           scanItem(1, 1);
            scanItem(4, 2);
 
 
@@ -50,7 +50,7 @@ public class View{
 
            receipt();
 
-           System.out.println();
+
 
 
        }
@@ -58,7 +58,7 @@ public class View{
            logFile.loggedException(exception);
            System.out.println(exception.getMessage());
        }
-
+       
     }
 
     /*The item gets scanned and recognized through the parameter itemIdentifier. Thanks to this parameter, the program

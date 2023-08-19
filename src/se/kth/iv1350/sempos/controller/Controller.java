@@ -64,7 +64,6 @@ public class Controller {
         PaymentDTO paymentInfo = sale.addPayment(paymentByCostumer);
         inventory.externalSystemUpdateInventory(receiptDTO);
         accountingSystem.externalSystemUpdateAccounting(receiptDTO);
-        sale.callObservers();
         return paymentInfo;
     }
 
