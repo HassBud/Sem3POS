@@ -16,7 +16,7 @@ public class PaymentDTO {
      * @param runningTotal the running total for the hole purchase represented by the instance.
      * @param change the change that the customer gets back represented by the instance.
      * */
-    public PaymentDTO(double totalPaymentByCustomer, double runningTotal, double change){
+    public PaymentDTO(double runningTotal,double totalPaymentByCustomer, double change){
         this.totalPaymentByCustomer = totalPaymentByCustomer;
         this.change = change;
         this.runningTotal = runningTotal;

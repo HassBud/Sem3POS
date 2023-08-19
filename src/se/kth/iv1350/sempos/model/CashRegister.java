@@ -9,13 +9,13 @@ public class CashRegister {
 
     /**
      * The <code>PaymentDTO</code> pay method calculates change the customer will recieve
-     * @param paymentByCostumer How much money the customer should pay
+     * @param expectedPaymentByCostumer How much money the customer should pay
      * @param totalPayment How much money the customer gives
      * @return The complete transaction
      */
-    public PaymentDTO pay(double paymentByCostumer, double totalPayment){
-        double change =  totalPayment - paymentByCostumer;
-        paymentInfo = new PaymentDTO(paymentByCostumer,totalPayment,change);
+    public PaymentDTO pay(double expectedPaymentByCostumer, double totalPayment){
+        double change =  totalPayment - expectedPaymentByCostumer;
+        paymentInfo = new PaymentDTO(expectedPaymentByCostumer,totalPayment,change);
         return paymentInfo;
 
     }
