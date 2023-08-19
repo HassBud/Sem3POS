@@ -7,3 +7,15 @@ se.kth.iv1350.sempos.Integration.DatabaseFailureException: Error can not connect
 	at se.kth.iv1350.sempos.startup.Main.main(Main.java:27)
 
 
+The thrown Exception: Cannot invoke "se.kth.iv1350.sempos.model.PaymentDTO.getTotalPaymentByCostumer()" because "saleRevenue" is null
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.sempos.model.PaymentDTO.getTotalPaymentByCostumer()" because "saleRevenue" is null
+	at se.kth.iv1350.sempos.startup.TotalRevenueView.calculateTotalRevenue(TotalRevenueView.java:29)
+	at se.kth.iv1350.sempos.startup.TotalRevenueView.displayRevenue(TotalRevenueView.java:23)
+	at se.kth.iv1350.sempos.model.Sale.callObservers(Sale.java:111)
+	at se.kth.iv1350.sempos.model.Sale.addPayment(Sale.java:87)
+	at se.kth.iv1350.sempos.controller.Controller.pay(Controller.java:64)
+	at se.kth.iv1350.sempos.view.View.payment(View.java:100)
+	at se.kth.iv1350.sempos.view.View.runFakeExecution(View.java:50)
+	at se.kth.iv1350.sempos.startup.Main.main(Main.java:27)
+
+

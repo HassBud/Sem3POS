@@ -34,6 +34,7 @@ public class TotalRevenueView implements SaleObserver {
 
     public void printTotalRevenue() {
         System.out.println("This is the total Revenue for all the sales made: " + totalRevenueForAllSales);
+        System.out.println("This is the total Revenue for all the sales made: " + revenueArrayList);
     }
 }
 
