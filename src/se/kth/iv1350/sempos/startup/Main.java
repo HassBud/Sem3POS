@@ -22,7 +22,7 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) throws Exception {
-        Controller contr = new Controller(new InventorySystem(), new Sale()); // ??? är det korrekt att ha new InventorySystem() och new Sale() i controllern??
+        Controller contr = new Controller(new InventorySystem());
         View view = new View(contr); //Ändrar jag till controller ist för contr försvinner typo. Chatgpt blir glad också
         view.runFakeExecution();
 

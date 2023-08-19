@@ -18,7 +18,8 @@ public class Controller {
     private InventorySystem inventory;
     private AccountingSystem accountingSystem;
     private ReceiptDTO receiptDTO;
-    private ArrayList<SaleObserver> saleObserversList = new ArrayList<>();
+    private ArrayList
+            <SaleObserver> saleObserversList = new ArrayList<>();
 
 
 
@@ -34,10 +35,9 @@ public class Controller {
 
     /**<code>Controller</code> Creates a new instance-
      * @param inventory The inventory represented by the instance
-     * @param sale The sale represented by the instance*/
-    public Controller(InventorySystem inventory, Sale sale) {
+     **/
+    public Controller(InventorySystem inventory) {
         this.inventory = inventory;
-        this.sale = sale;
         this.accountingSystem = new AccountingSystem();
 
 
