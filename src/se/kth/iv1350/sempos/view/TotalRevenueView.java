@@ -27,7 +27,7 @@ public class TotalRevenueView implements SaleObserver {
     }
 
     public void calculateTotalRevenue(PaymentDTO saleRevenue){
-        totalRev += saleRevenue.getTotalPaymentByCostumer();
+        totalRev += saleRevenue.getRunningTotal();
     }
 
     public void printTotalRevenue() {
