@@ -27,7 +27,7 @@ public class Controller {
      */
     public void startSale() {
         sale = new Sale();
-        sale.copyListWithObserversToSale(saleObserversList);
+        sale.copyListWithObservers(saleObserversList);
 
     }
 

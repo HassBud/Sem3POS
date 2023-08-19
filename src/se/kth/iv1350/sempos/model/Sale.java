@@ -85,7 +85,7 @@ public class Sale {
         this.cashRegister = new CashRegister();
         cashRegister.pay(this.runningTotalIncVat, paymentByCostumer);
         callObservers();
-        copyListWithObserversToSale(saleObserverArrayList);
+        copyListWithObservers(saleObserverArrayList);
         return cashRegister.getPaymentInfo();
 
 
@@ -112,7 +112,8 @@ public class Sale {
         }
 
     }
-    public void copyListWithObserversToSale(List<SaleObserver> saleObservers){
+    public void copyListWithObservers
+            (List<SaleObserver> saleObservers){
         saleObserverArrayList.addAll(saleObservers);
     }
 
