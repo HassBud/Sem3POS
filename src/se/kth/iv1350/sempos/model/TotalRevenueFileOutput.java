@@ -1,13 +1,9 @@
 package se.kth.iv1350.sempos.model;
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TotalRevenueFileOutput implements SaleObserver{
-
 
     private PrintWriter printWriter;
     private double totalRev;
@@ -27,8 +23,6 @@ public class TotalRevenueFileOutput implements SaleObserver{
     public void displayRevenue(PaymentDTO saleRevenue) {
         calculatedRevenue(saleRevenue);
         listedRevenue(totalRev);
-
-
     }
 
     private void calculatedRevenue(PaymentDTO saleRevenue){
@@ -36,13 +30,10 @@ public class TotalRevenueFileOutput implements SaleObserver{
     }
 
 
-
     public void listedRevenue(double totalRev) {
 
         StringBuilder revenueThatGetsLogged = new StringBuilder();
         revenueThatGetsLogged.append("Total revenue: " );
-        revenueThatGetsLogged.append("  ");
-
         revenueThatGetsLogged.append(totalRev);
         printWriter.println(revenueThatGetsLogged);
         printWriter.println("\n");

@@ -3,11 +3,10 @@ package se.kth.iv1350.sempos.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-/* Represents the created receipt for the sale. Proves the payment for the sale */
+/**
+ * Represents the created receipt for the sale. Proves the payment for the sale
+ */
 public class ReceiptDTO {
-
-
-
 
     private ArrayList <Item> recordsOfItems;
     private double amountPaid;
@@ -33,27 +32,21 @@ public class ReceiptDTO {
         this.totalAmountOfSaleIncVAT = paymentInfo.getRunningTotal();
         this.totalVat = totalVat;
         this.localDateTime = java.time.LocalDateTime.now();
-
-
     }
 
 
     /**
      *  Getters for the attributes
-     *  */
-
-
+     */
     public ArrayList<Item> getRecordsOfItems() {
         return recordsOfItems;
     }
     public double getAmountPayed() {
         return amountPaid;
     }
-
     public double getChangeBack() {
         return changeBack;
     }
-
     public double getTotalAmountOfSaleIncVAT() {
         return totalAmountOfSaleIncVAT;
     }

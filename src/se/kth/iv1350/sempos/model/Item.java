@@ -1,9 +1,6 @@
 package se.kth.iv1350.sempos.model;
 
-
 public class Item{
-
-
 
     private int numberOfItems;
     ItemDTO itemDTO;
@@ -12,8 +9,8 @@ public class Item{
     /**
      * Item constructor creates new instances representing an Item.
      * @param newItemDTO represents an item with all the information regarding the item.
-     *
      * */
+
     public Item(ItemDTO newItemDTO){
         itemDTO = newItemDTO;
         numberOfItems = 0;

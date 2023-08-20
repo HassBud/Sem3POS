@@ -1,8 +1,6 @@
 package se.kth.iv1350.sempos.Integration;
-
 import se.kth.iv1350.sempos.model.*;
 
-/* Skriv här */
 public class InventorySystem {
 
     /**
@@ -10,7 +8,6 @@ public class InventorySystem {
      * */
     public InventorySystem() {
     }
-
 
     /**
      *  Hard coded information about each item available in the store. Checks if identifierOfItem
@@ -21,17 +18,16 @@ public class InventorySystem {
     public ItemDTO getItemInformation(int identifierOfItem) throws InvalidIdentifierOfItemException, DatabaseFailureException {
         if (identifierOfItem == 1)
             return new ItemDTO(1, "Äpple", 5, 0.06);
-            //throw new DatabaseFailureException();
-            //istället för att returnera Äpplet så skulle denna hårdkoda att det blir fel med kontakt till servern
         else if (identifierOfItem == 2)
             return new ItemDTO(2, "Bok", 25, 0.25);
         else if (identifierOfItem == 3)
             return new ItemDTO(3, "Mjölk", 10, 0.12);
         else if (identifierOfItem == 4) {
             throw new DatabaseFailureException("Error can not connect to server. ");
-
+            // Glöm inte att lägga till båda exceptions i kommentarerna! Du kan ta bort meddelandet :)
         } else
             throw new InvalidIdentifierOfItemException("Invalid Item-ID for ID: " + identifierOfItem + "\n");
+        // Glöm inte att lägga till båda exceptions i kommentarerna! Du kan ta bort meddelandet :)
     }
 
     /** External system receives a receipt with information needed for external system InventorySystem.

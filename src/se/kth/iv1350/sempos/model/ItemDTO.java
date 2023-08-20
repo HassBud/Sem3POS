@@ -12,19 +12,9 @@ public class ItemDTO {
     private double priceOfItemIncVat;
 
 
-    //constructor for itemDTO
-    /*
-     *  Creates a new instance.
-     *
-     * @param quantity number of items.
-     * @param itemID identification of a specific item.
-     */
-
-
-    /*Constructor for ItemDTO. Stores all the info about the item */
 
     /**
-     * Creates an ItemDTO instance
+     * Constructor for ItemDTO. Stores all the info about the item.
      * @param identifierOfItem The unique ID of a specific item
      * @param nameOfItem    The name of the item
      * @param priceOfItem The price of the item
@@ -42,10 +32,7 @@ public class ItemDTO {
 
     }
 
-    //should have a getIdentifierOfItem/setidentifierOfItem
-    //incrementNumberOfItems --> see the new class Item
 
-    /*gets the item number (1, 2 or 3) and stores it in identifierOfItem */
 
     /**
      * The getter for the identifierOfItem attribute
@@ -55,7 +42,6 @@ public class ItemDTO {
         return identifierOfItem;
     }
 
-    /*gets the VAT for the item and stores it in vatPriceForItem */
 
     /**
      * The getter for the VAT rate attribute
@@ -65,18 +51,6 @@ public class ItemDTO {
         return vatPriceForItem;
     }
 
-    /*gets the price of the item and stores it in priceOfItem.
-    * OBS! VARFÖR STÅR DET ANVÄNDS EJ. RADERA? */
-
-    /**
-     * The getter for the price of the item
-     * @return The item's price
-     */
-    public double getPriceOfItem() {
-        return priceOfItem;
-    }
-
-    /*gets the name of the item and stores it in nameOfItem */
 
     /**
      * The getter for the name of the item
@@ -95,12 +69,6 @@ public class ItemDTO {
     public double getPriceOfItemIncVat() {
         return this.priceOfItemIncVat;
     }
-
-
-    //getter och setter för quantity på lager i inventorySystem | lär ej behövas när vi har getQuantityInInventory
-    /*public int getQuanity(){
-        return quanity;
-    }*/
 
 
 }

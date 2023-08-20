@@ -9,7 +9,7 @@ public class LatestRegisteredItemDTO {
     private double itemPriceIncVat;
     private double runningTotalIncVat;
     private double totalVat;
-    private int numberOfItems; //Ändrade till int
+    private int numberOfItems;
 
 
     /*The constructor LatestRegisteredItemDTO takes the parameters itemInformation, currentTotalPrice, currentTotalVat
@@ -62,6 +62,6 @@ public class LatestRegisteredItemDTO {
      */
     public int getNumberOfItems() {
         return numberOfItems;
-    } //ändrade till int
+    }
 
 }

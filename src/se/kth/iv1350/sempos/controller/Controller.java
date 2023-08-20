@@ -1,12 +1,10 @@
 package se.kth.iv1350.sempos.controller;
 import se.kth.iv1350.sempos.Integration.AccountingSystem;
-//import se.kth.iv1350.sempos.Integration.DatabaseFailureException;
 import se.kth.iv1350.sempos.Integration.DatabaseFailureException;
 import se.kth.iv1350.sempos.Integration.InventorySystem;
 import se.kth.iv1350.sempos.model.*;
-
 import java.util.ArrayList;
-import java.util.List;
+
 
 
 /**
@@ -27,8 +25,6 @@ public class Controller {
      */
     public void startSale() {
         sale = new Sale(saleObserversList);
-
-
     }
 
 
@@ -38,8 +34,6 @@ public class Controller {
     public Controller(InventorySystem inventory) {
         this.inventory = inventory;
         this.accountingSystem = new AccountingSystem();
-
-
     }
 
     /** The <code>LatestRegisteredItemDTO</code> registerItem method fetches information about the item
@@ -50,8 +44,6 @@ public class Controller {
     public LatestRegisteredItemDTO registerItem(int identifierOfItem, int quantity) throws InvalidIdentifierOfItemException, DatabaseFailureException {
         ItemDTO itemInfo = inventory.getItemInformation(identifierOfItem);
         LatestRegisteredItemDTO registeredSaleInfo = sale.addItem(itemInfo, quantity);
-
-
         return registeredSaleInfo;
     }
 

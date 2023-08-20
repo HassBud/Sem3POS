@@ -1,7 +1,7 @@
 package se.kth.iv1350.sempos.model;
 
-/**Represents the cash register in the store.
- *
+/**
+ * Represents the cash register in the store.
  */
 public class CashRegister {
 

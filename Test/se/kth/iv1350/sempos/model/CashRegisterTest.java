@@ -28,7 +28,4 @@ class CashRegisterTest {
 
     }
 
-  //  @Test
-  //  void getPaymentInfo() {
-  //  }
 }

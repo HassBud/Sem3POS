@@ -40,15 +40,30 @@ The revenue for all sales : 168.60000000000002
 *************************The revenue for today´s Sale ***************************  168.60000000000002
 
 
-kfmlkscmnlks
 Total revenue:   10.6
 
 
-kfmlkscmnlks
 Total revenue:   163.3
 
 
-kfmlkscmnlks
+Total revenue:   168.60000000000002
+
+
+Total revenue:   10.6
+
+
+Total revenue:   163.3
+
+
+Total revenue:   168.60000000000002
+
+
+Total revenue:   10.6
+
+
+Total revenue:   163.3
+
+
 Total revenue:   168.60000000000002
 
 
@@ -68,5 +83,95 @@ Total revenue:   163.3
 
 
 Total revenue:   168.60000000000002
+
+
+Total revenue:   10.6
+
+
+Total revenue:   163.3
+
+
+Total revenue:   168.60000000000002
+
+
+Total revenue: 10.6
+
+
+Total revenue: 163.3
+
+
+Total revenue: 168.60000000000002
+
+
+Total revenue: 10.6
+
+
+Total revenue: 163.3
+
+
+Total revenue: 168.60000000000002
+
+
+Total revenue: 10.6
+
+
+Total revenue: 163.3
+
+
+Total revenue: 168.60000000000002
+
+
+Total revenue: 10.6
+
+
+Total revenue: 163.3
+
+
+Total revenue: 168.60000000000002
+
+
+Total revenue: 10.6
+
+
+Total revenue: 163.3
+
+
+Total revenue: 168.60000000000002
+
+
+Total revenue: 10.6
+
+
+Total revenue: 163.3
+
+
+Total revenue: 168.60000000000002
+
+
+Total revenue: 10.6
+
+
+Total revenue: 163.3
+
+
+Total revenue: 168.60000000000002
+
+
+Total revenue: 10.6
+
+
+Total revenue: 163.3
+
+
+Total revenue: 168.60000000000002
+
+
+Total revenue: 10.6
+
+
+Total revenue: 163.3
+
+
+Total revenue: 168.60000000000002
 
 

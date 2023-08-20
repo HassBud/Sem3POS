@@ -3,14 +3,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-
-/* One sale made in system */
-
 /**
  * Represents a sale made
  */
 public class Sale {
-    private LocalDateTime saleTime;  //Ta bort?
+
     private ReceiptDTO receiptDTO;
     private PaymentDTO totalPayment;
     private ArrayList<Item> listItem;
@@ -20,11 +17,6 @@ public class Sale {
     private int quantityOfEachItem;
     private List<SaleObserver> saleObserverArrayList;
 
-
-
-
-
-    /* Creates new instance and saves time of sale */
 
     /**
      * Creates a new sale instance
@@ -39,7 +31,6 @@ public class Sale {
     }
 
 
-    /* Adds an Item to the list */
 
     /**
      *  Adds an item to <code>listItem</code>
@@ -73,7 +64,6 @@ public class Sale {
         return saleInfo;
     }
 
-    /*addPayment adds the amount the customer pays (paymentByCustomer) and sends the information to the cashRegister */
 
     /**
      * The <code>PaymentDTO</code> addPayment method adds the amount the customer pays to the cash register
@@ -91,7 +81,6 @@ public class Sale {
 
     }
 
-    /*The information about the purchase the customer made gets stored in receiptDTO */
 
     /**
      * The <code>ReceiptDTO</code> addReceipt method adds the transaction information to a receipt
@@ -113,14 +102,6 @@ public class Sale {
 
     }
 
-    /**
-     * The getter for quantityOfEachItem
-     * @return The quantity of the item's being sold
-     */
-    //Står används ej. Ta bort?
-    public int getQuantityOfEachItem() {
-        return quantityOfEachItem;
-    }
 
 }
 

@@ -1,16 +1,11 @@
 package se.kth.iv1350.sempos.view;
-
 import se.kth.iv1350.sempos.model.PaymentDTO;
 import se.kth.iv1350.sempos.model.SaleObserver;
-import se.kth.iv1350.sempos.model.ReceiptDTO;
-
-
 import java.lang.*;
-
-
 
 public class TotalRevenueView implements SaleObserver {
     private double totalRev;
+
 
     public TotalRevenueView(){
         totalRev = 0;
@@ -20,13 +15,10 @@ public class TotalRevenueView implements SaleObserver {
     public void displayRevenue(PaymentDTO saleRevenue) {
         calculateTotalRevenue(saleRevenue);
         printTotalRevenue();
-
     }
 
     public void calculateTotalRevenue(PaymentDTO saleRevenue){
-
-            totalRev += saleRevenue.getRunningTotal();
-
+        totalRev += saleRevenue.getRunningTotal();
     }
 
     public void printTotalRevenue() {

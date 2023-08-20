@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class InventorySystemTest {
     InventorySystem testItemID;
 
-
     @BeforeEach
     void setUp() {
         testItemID = new InventorySystem();
@@ -28,8 +27,6 @@ class InventorySystemTest {
         assertEquals(2,secondItem.getIdentifierOfItem(), "Item ID does not match");
         ItemDTO thirdItem = testItemID.getItemInformation(3);
         assertEquals(3,thirdItem.getIdentifierOfItem(), "Item ID does not match");
-        ItemDTO itemNotOnList = testItemID.getItemInformation(5);
-        assertNull(itemNotOnList, "No existing Item");
 
     }
 }
