@@ -1,10 +1,8 @@
 package se.kth.iv1350.sempos.view;
-//import se.kth.iv1350.sempos.Integration.DatabaseFailureException;
 import se.kth.iv1350.sempos.Integration.DatabaseFailureException;
 import se.kth.iv1350.sempos.controller.Controller;
 import se.kth.iv1350.sempos.logFiles.LogFile;
 import se.kth.iv1350.sempos.model.*;
-
 import java.util.ArrayList;
 
 
@@ -16,11 +14,6 @@ import java.util.ArrayList;
 public class View{
     private Controller contr;
     private LogFile logFile;
-    private TotalRevenueFileOutput totalRevenueFileOutput;
-
-
-
-
 
     /** Creates a new instance
     * @param contr The controller to use for all calls to other layers.
@@ -30,14 +23,12 @@ public class View{
         this.logFile = new LogFile();
         contr.addToObserverList(new TotalRevenueView());
         contr.addToObserverList(new TotalRevenueFileOutput());
-
-
     }
 
     /**
      * The <code>void</code> runFakeExecution method performs a fake sale, by calling all system operations in the controller
      */
-    public void runFakeExecution(){
+    public void runFakeExecution(){    // glöm ej Try Catch som fångar exceptions :) Du kan ta bort detta meddelande.
        
        try {
            contr.startSale();
@@ -45,11 +36,11 @@ public class View{
            scanItem(5,1);
            scanItem(1, 2);
            scanItem(4, 2);
-
-
            payment(200);
-
            receipt();
+
+
+
            System.out.println(" ");
            System.out.println("################################# NEW SALE ###################################");
            System.out.println(" ");
@@ -60,8 +51,9 @@ public class View{
            scanItem(2, 4);
            scanItem(3, 2);
            payment(300);
-
            receipt();
+
+
 
            System.out.println(" ");
            System.out.println("################################# NEW SALE ###################################");
@@ -70,7 +62,6 @@ public class View{
            contr.startSale();
            System.out.println("A new sale has been started. \n");
            scanItem(1, 1);
-          
            payment(300);
            receipt();
        }
@@ -81,8 +72,6 @@ public class View{
 
     }
 
-    /*The item gets scanned and recognized through the parameter itemIdentifier. Thanks to this parameter, the program
-    * can get all relevant information via the getters. */
 
     /**
      * The <code>void</code> scanItem method represents the scanning of an item that's being sold
@@ -108,7 +97,6 @@ public class View{
            System.out.println(exception.getMessage());
        }
     }
-    /*H}                                                                                        ow much the customer gives as payment. Set to 200 by default.  */
 
     /**
      * The <code>void</code> payment method represents how much the customer gives as payment and how much change they should receive
@@ -124,8 +112,6 @@ public class View{
             System.out.println(); 
     }
 
-    /*A list is created with the quantity of each item, the name of the items, the items' prices including VAT,
-    * as well as the time of the sale */
 
     /**
      * The <code>void</code> receipt method represents all the information about the sale that is being printed on the receipt
