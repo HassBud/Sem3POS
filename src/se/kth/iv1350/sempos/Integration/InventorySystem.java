@@ -14,8 +14,9 @@ public class InventorySystem {
 
     /**
      *  Hard coded information about each item available in the store. Checks if identifierOfItem
-     *  is equal to a specific number.
-     * @param identifierOfItem identifier for a specifik item.
+     *  is equal to a specific number. If an item that is scanned has an ID which is not in the database, an error message is displayed.
+     *  An error is also displayed if the database cannot be accessed.
+     * @param identifierOfItem identifier for a specific item.
      * @return The information of the specific item.
      *  */
     public ItemDTO getItemInformation(int identifierOfItem) throws InvalidIdentifierOfItemException, DatabaseFailureException {
@@ -27,10 +28,8 @@ public class InventorySystem {
             return new ItemDTO(3, "Mjölk", 10, 0.12);
         else if (identifierOfItem == 4) {
             throw new DatabaseFailureException("Error can not connect to server. ");
-            // Glöm inte att lägga till båda exceptions i kommentarerna! Du kan ta bort meddelandet :)
         } else
             throw new InvalidIdentifierOfItemException("Invalid Item-ID for ID: " + identifierOfItem + "\n");
-        // Glöm inte att lägga till båda exceptions i kommentarerna! Du kan ta bort meddelandet :)
     }
 
     /** External system receives a receipt with information needed for external system InventorySystem.
