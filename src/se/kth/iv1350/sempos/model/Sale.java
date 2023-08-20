@@ -29,7 +29,7 @@ public class Sale {
     /**
      * Creates a new sale instance
      */
-    public Sale(ArrayList observers) {
+    public Sale(ArrayList<SaleObserver> observers) {
         //should have a list
         listItem = new ArrayList<Item>();
         this.saleObserverArrayList = observers;

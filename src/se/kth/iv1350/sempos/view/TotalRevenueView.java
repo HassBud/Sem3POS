@@ -7,10 +7,7 @@ import se.kth.iv1350.sempos.model.ReceiptDTO;
 
 import java.lang.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
 
 public class TotalRevenueView implements SaleObserver {
     private double totalRev;
@@ -27,13 +24,17 @@ public class TotalRevenueView implements SaleObserver {
     }
 
     public void calculateTotalRevenue(PaymentDTO saleRevenue){
-        totalRev += saleRevenue.getRunningTotal();
+
+            totalRev += saleRevenue.getRunningTotal();
+
     }
 
     public void printTotalRevenue() {
+        System.out.println(" ");
         System.out.println("   *** Total revenue for all sales ***");
-        System.out.println("            " + totalRev + ":-     ");
+        System.out.println("            " + String.format("%.2f",totalRev) + ":-     ");
         System.out.println("*** *** *** *** *** *** *** *** *** *** ***");
+        System.out.println(" ");
     }
 }
 

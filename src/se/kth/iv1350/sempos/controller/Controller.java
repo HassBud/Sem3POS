@@ -18,8 +18,7 @@ public class Controller {
     private InventorySystem inventory;
     private AccountingSystem accountingSystem;
     private ReceiptDTO receiptDTO;
-    private ArrayList
-            <SaleObserver> saleObserversList = new ArrayList<>();
+    private ArrayList<SaleObserver> saleObserversList = new ArrayList<>();
 
 
 

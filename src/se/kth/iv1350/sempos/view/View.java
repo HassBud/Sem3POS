@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class View{
     private Controller contr;
     private LogFile logFile;
-    private TotalRevenueView totalRevenueView;
+    private TotalRevenueFileOutput totalRevenueFileOutput;
 
 
 
@@ -29,6 +29,7 @@ public class View{
         this.contr = contr;
         this.logFile = new LogFile();
         contr.addToObserverList(new TotalRevenueView());
+        contr.addToObserverList(new TotalRevenueFileOutput());
 
 
     }
@@ -37,28 +38,47 @@ public class View{
      * The <code>void</code> runFakeExecution method performs a fake sale, by calling all system operations in the controller
      */
     public void runFakeExecution(){
-
+       
        try {
            contr.startSale();
            System.out.println("A new sale has been started. \n");
            scanItem(5,1);
-           scanItem(1, 1);
+           scanItem(1, 2);
            scanItem(4, 2);
 
 
            payment(200);
 
            receipt();
+           System.out.println(" ");
+           System.out.println("################################# NEW SALE ###################################");
+           System.out.println(" ");
 
+           contr.startSale();
+           System.out.println("A new sale has been started. \n");
+           scanItem(1, 1);
+           scanItem(2, 4);
+           scanItem(3, 2);
+           payment(300);
 
+           receipt();
 
+           System.out.println(" ");
+           System.out.println("################################# NEW SALE ###################################");
+           System.out.println(" ");
 
+           contr.startSale();
+           System.out.println("A new sale has been started. \n");
+           scanItem(1, 1);
+          
+           payment(300);
+           receipt();
        }
        catch (Exception exception){
            logFile.loggedException(exception);
            System.out.println(exception.getMessage());
        }
-       
+
     }
 
     /*The item gets scanned and recognized through the parameter itemIdentifier. Thanks to this parameter, the program

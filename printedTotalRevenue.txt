@@ -1,0 +1,72 @@
+The revenue for all sales : 5.3
+
+
+The revenue for all sales : 158.00000000000003
+
+
+The revenue for all sales : se.kth.iv1350.sempos.model.PaymentDTO@15aeb7ab
+
+
+The revenue for all sales : se.kth.iv1350.sempos.model.PaymentDTO@66a29884
+
+
+The revenue for all sales : 5.3
+
+
+The revenue for all sales : 158.00000000000003
+
+
+The revenue for all sales : 10.6
+
+
+The revenue for all sales : 163.3
+
+
+The revenue for all sales : 10.6
+
+
+The revenue for all sales : 163.3
+
+
+The revenue for all sales : 168.60000000000002
+
+
+*************************The revenue for today´s Sale ***************************  10.6
+
+
+*************************The revenue for today´s Sale ***************************  163.3
+
+
+*************************The revenue for today´s Sale ***************************  168.60000000000002
+
+
+kfmlkscmnlks
+Total revenue:   10.6
+
+
+kfmlkscmnlks
+Total revenue:   163.3
+
+
+kfmlkscmnlks
+Total revenue:   168.60000000000002
+
+
+Total revenue:   10.6
+
+
+Total revenue:   163.3
+
+
+Total revenue:   168.60000000000002
+
+
+Total revenue:   10.6
+
+
+Total revenue:   163.3
+
+
+Total revenue:   168.60000000000002
+
+
