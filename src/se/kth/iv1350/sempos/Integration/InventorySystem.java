@@ -12,13 +12,15 @@ public class InventorySystem {
     public InventorySystem() {
     }
 
+
     /**
-     *  Hard coded information about each item available in the store. Checks if identifierOfItem
-     *  is equal to a specific number. If an item that is scanned has an ID which is not in the database, an error message is displayed.
-     *  An error is also displayed if the database cannot be accessed.
+     * Hard coded information about each item available in the store. Checks if identifierOfItem
+     * is equal to a specific number.
      * @param identifierOfItem identifier for a specific item.
      * @return The information of the specific item.
-     *  */
+     * @throws InvalidIdentifierOfItemException The exception is thrown when an item's ID does not match any of the IDs in the database.
+     * @throws DatabaseFailureException The exception is thrown when the database cannot be accessed.
+     */
     public ItemDTO getItemInformation(int identifierOfItem) throws InvalidIdentifierOfItemException, DatabaseFailureException {
         if (identifierOfItem == 1)
             return new ItemDTO(1, "Äpple", 5, 0.06);
