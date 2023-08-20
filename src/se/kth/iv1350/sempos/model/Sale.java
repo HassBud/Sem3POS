@@ -66,7 +66,8 @@ public class Sale {
 
 
     /**
-     * The <code>PaymentDTO</code> addPayment method adds the amount the customer pays to the cash register
+     * The <code>PaymentDTO</code> addPayment method adds the amount the customer pays to the cash register.
+     * Uses the <code>callObservers</code> method
      * @param paymentByCostumer How much money the customer pays
      * @return How much money in the cash register after the transaction
      */
@@ -90,11 +91,13 @@ public class Sale {
         PaymentDTO saleInfo = cashRegister.getPaymentInfo();
 
         this.receiptDTO = new ReceiptDTO(saleInfo,listItem,totalVat);
-        //Varför totalVat och inte totalPriceIncVat?
         return this.receiptDTO;
     }
 
 
+    /**
+     * The method <code>callObservers</code> let's each observer know that a sale is made and gives them the totalPayment
+     */
     public void callObservers(){
         for(SaleObserver saleObserver : saleObserverArrayList){
             saleObserver.displayRevenue(totalPayment);

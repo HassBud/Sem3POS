@@ -3,7 +3,9 @@ package se.kth.iv1350.sempos.Integration;
 import se.kth.iv1350.sempos.model.ReceiptDTO;
 
 
-/* Skriv här */
+/**
+ * Represents the accoounting system database where the information about each sale is stored
+ */
 public class AccountingSystem {
 
     /** External system receives a receipt with information needed for external system AccountingSystem.

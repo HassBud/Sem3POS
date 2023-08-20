@@ -15,8 +15,10 @@ public class View{
     private Controller contr;
     private LogFile logFile;
 
-    /** Creates a new instance
-    * @param contr The controller to use for all calls to other layers.
+    /**
+     * Creates a new instance
+     * @param contr The controller that is used to call the other layers
+     * @throws Exception If something goes wrong an exception is thrown
      */
     public View(Controller contr)  throws Exception {
         this.contr = contr;
@@ -26,9 +28,11 @@ public class View{
     }
 
     /**
-     * The <code>void</code> runFakeExecution method performs a fake sale, by calling all system operations in the controller
+     * The <code>void</code> runFakeExecution method performs a fake sale, by calling all system operations in the controller.
+     * If an item cannot be registered or the server cannot be contacted, an exception gets thrown. For the latter,
+     * a message with information about the failure gets logged.
      */
-    public void runFakeExecution(){    // glöm ej Try Catch som fångar exceptions :) Du kan ta bort detta meddelande.
+    public void runFakeExecution(){
        
        try {
            contr.startSale();

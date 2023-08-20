@@ -1,5 +1,8 @@
 package se.kth.iv1350.sempos.model;
 
+/**
+ * Represents the item that is scanned into the system
+ */
 public class Item{
 
     private int numberOfItems;
@@ -26,13 +29,17 @@ public class Item{
     }
 
     /**
-     * Getter for the attribute.
+     * Getter for the attribute itemDTO
+     * @return The object with the information about the item
      */
-
     public ItemDTO getItemDTO() {
         return this.itemDTO;
     }
 
+    /**
+     * Getter for the attribute numberOfItems
+     * @return the amount of the item that has been scanned
+     */
     public int getNumberOfItems() {
         return numberOfItems;
     }

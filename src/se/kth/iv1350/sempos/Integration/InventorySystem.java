@@ -1,6 +1,9 @@
 package se.kth.iv1350.sempos.Integration;
 import se.kth.iv1350.sempos.model.*;
 
+/**
+ * Respresents the server where all the store's item IDs are
+ */
 public class InventorySystem {
 
     /**
@@ -11,7 +14,7 @@ public class InventorySystem {
 
     /**
      *  Hard coded information about each item available in the store. Checks if identifierOfItem
-     *  is equal to a specific number. Re
+     *  is equal to a specific number.
      * @param identifierOfItem identifier for a specifik item.
      * @return The information of the specific item.
      *  */

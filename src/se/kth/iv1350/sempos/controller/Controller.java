@@ -66,6 +66,10 @@ public class Controller {
         return sale.addReceipt();
     }
 
+    /**
+     * The <code>addObserverList</code> method adds a new observer to the list
+     * @param saleObserver The observer that is added
+     */
     public void addToObserverList(SaleObserver saleObserver){
         saleObserversList.add(saleObserver);
     }
