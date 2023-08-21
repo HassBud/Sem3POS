@@ -35,6 +35,5 @@ class InvalidIdentifierOfItemExceptionTest {
         assertEquals(3,thirdItem.getIdentifierOfItem(), "Item ID does not match");
         String exceptionMessage = "Testing exception for invalid ID";
         assertEquals(exceptionMessage, testException.getMessage(), "Item ID is not existing.");
-
     }
 }
