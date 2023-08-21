@@ -43,6 +43,5 @@ class InventorySystemTest {
         assertEquals(2,secondItem.getIdentifierOfItem(), "Item ID does not match");
         ItemDTO thirdItem = testItemID.getItemInformation(3);
         assertEquals(3,thirdItem.getIdentifierOfItem(), "Item ID does not match");
-
     }
 }

@@ -11,10 +11,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class DatabaseFailureExceptionTest {
 
     @Test
-    public void dataFaliureException(){
+    public void dataFailureException(){
         String exceptionMessage = "Not able to connect to server";
         DatabaseFailureException noConnectionToServer = new DatabaseFailureException(exceptionMessage);
         assertEquals(exceptionMessage, noConnectionToServer.getMessage(), "Not able to connect correctly to server");
+
     }
 
 
