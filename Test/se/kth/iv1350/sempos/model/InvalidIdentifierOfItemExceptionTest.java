@@ -34,7 +34,7 @@ class InvalidIdentifierOfItemExceptionTest {
         ItemDTO thirdItem = testItemID.getItemInformation(3);
         assertEquals(3,thirdItem.getIdentifierOfItem(), "Item ID does not match");
         String exceptionMessage = "Testing exception for invalid ID";
-        assertEquals(exceptionMessage, testException.getMessage(), "Not able to connect correctly to server");
+        assertEquals(exceptionMessage, testException.getMessage(), "Item ID is not existing.");
 
     }
 }
